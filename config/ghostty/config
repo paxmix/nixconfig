@@ -1,0 +1,25 @@
+theme = TokyoNight
+
+# maximize = true
+
+# custom-shader = shaders/cursor_smear_original.glsl
+# custom-shader = shaders/cursor_blaze.glsl
+# custom-shader = shaders/cursor_blaze_no_trail.glsl
+# custom-shader = shaders/cursor_blaze_tapered.glsl
+# custom-shader = shaders/cursor_border_1.glsl
+# custom-shader = shaders/cursor_smear_fade.glsl
+# custom-shader = shaders/cursor_smear_fade_original.glsl
+# custom-shader = shaders/cursor_smear_gradient.glsl
+# custom-shader = shaders/cursor_smear_gradient_original.glsl
+# custom-shader = shaders/cursor_smear_rainbow.glsl
+# custom-shader = shaders/cursor_smear_rainbow_original.glsl
+
+gtk-tabs-location = bottom
+
+font-family = CommitMono
+font-size = 13
+
+window-padding-x = 5
+window-padding-y = 5
+
+confirm-close-surface = false
