@@ -107,6 +107,8 @@
       golangci-lint-langserver
       gofumpt
       vscode-langservers-extracted
+
+      kdlfmt
     ];
   };
 }
