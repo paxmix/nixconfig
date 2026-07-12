@@ -13,6 +13,11 @@
       settings.style = "night"; # Standard LazyVim default
     };
 
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+
     plugins = {
       blink-cmp = {
         enable = true;
@@ -72,8 +77,10 @@
 
       neo-tree = {
         enable = true;
-        closeIfLastWindow = true;
-        window.position = "left";
+        settings = {
+          close_if_last_window = true;
+          window.position = "left";
+        };
       };
 
       bufferline = {
@@ -82,9 +89,6 @@
       };
 
       lualine.enable = true;
-
-      noice.enable = true;
-      notify.enable = true; # Visual notifications backend for Noice
 
       gitsigns.enable = true;
 
