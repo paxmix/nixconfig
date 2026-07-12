@@ -24,6 +24,7 @@ in
     ./config/vim.nix
     ./config/yazi.nix
     ./config/helix.nix
+    ./config/nixvim
   ];
 
   home.username = "paxmix";
