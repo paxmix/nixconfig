@@ -51,7 +51,6 @@ in
     transmission_4-gtk
     vesktop
     libreoffice-fresh
-    localsend
     mission-center
   ];
 }
