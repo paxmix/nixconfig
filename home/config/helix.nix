@@ -95,6 +95,10 @@
             "tmpl"
           ];
         }
+        {
+          name = "kdl";
+          auto-format = true;
+        }
       ];
     };
     extraPackages = with pkgs; [
