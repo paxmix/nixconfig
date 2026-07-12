@@ -6,13 +6,14 @@ binds {
 
   // ─── Applications ───
   Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
-  Mod+D                     		      hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+  Mod+D                     		  hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
   Mod+B                               hotkey-overlay-title="Open Browser: Floorp" { spawn "floorp"; }
-  // Mod+ALT+L                        hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-  Mod+Shift+Q                        	hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
+  Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
+  Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
 
   // Please choose your own file manager.
   Mod+E                               hotkey-overlay-title="File Manager: Thunar" { spawn "thunar"; }
+  Mod+Semicolon                       hotkey-overlay-title="Open Clipboard" { spawn-sh "noctalia msg panel-toggle clipboard"; }
 
   // ─── Media Controls ───
   XF86AudioMicMute                    allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
