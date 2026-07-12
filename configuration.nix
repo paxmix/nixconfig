@@ -1,18 +1,21 @@
 {
   inputs,
-  config,
-  lib,
   pkgs,
   ...
 }:
-
 {
   imports = [
     inputs.noctalia.nixosModules.default
     ./hardware-configuration.nix
+    ./modules/gaming.nix
+    ./modules/nvidia.nix
+    ./modules/packages.nix
+    ./modules/input.nix
+    ./modules/xdg.nix
+    ./modules/desktop.nix
+    ./modules/thunar.nix
   ];
 
-  # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -20,15 +23,12 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
   networking.networkmanager.insertNameservers = [
-    "9.9.9.9"
+    "9.9.9.9" # Use Quad9 DNS
     "1.1.1.1"
   ];
 
-  # Set your time zone.
   time.timeZone = "Asia/Vientiane";
   i18n.defaultLocale = "en_SG.UTF-8";
   i18n.extraLocaleSettings = {
@@ -42,16 +42,6 @@
     LC_TELEPHONE = "en_SG.UTF-8";
     LC_TIME = "en_SG.UTF-8";
   };
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5 = {
-      waylandFrontend = true;
-      addons = with pkgs; [
-        fcitx5-bamboo
-      ];
-    };
-  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -59,18 +49,6 @@
     variant = "";
   };
 
-  programs.niri.enable = true;
-  programs.xwayland.enable = true;
-  programs.noctalia = {
-    enable = true;
-    recommendedServices.enable = true;
-  };
-  services.displayManager = {
-    defaultSession = "niri";
-    ly.enable = true;
-  };
-
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -79,32 +57,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
-  # Enable ddcutil support globally and create the i2c group
-  hardware.i2c.enable = true;
-
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
-  };
-  # Enable the system service for Thunar
-  programs.dconf.enable = true;
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
-
-  # Enable ZSH
   programs.zsh.enable = true;
   environment.localBinInPath = true;
   environment.sessionVariables = {
-    # This appends your custom directory to the system PATH
     PATH = [
       "$HOME/go/bin"
     ];
@@ -113,7 +70,7 @@
     XCURSOR_SIZE = "24";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  hardware.i2c.enable = true; # For ddcutil
   users.users.paxmix = {
     isNormalUser = true;
     description = "Pham Duc Manh";
@@ -125,109 +82,6 @@
     ];
   };
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-    ghostty
-    curl
-    wget
-    unzip
-    unrar
-    p7zip
-    ddcutil
-    wl-clipboard
-    xwayland-satellite
-
-    floorp-bin
-
-    # For Steam
-    protonplus
-    liberation_ttf
-
-    # Gnome Stuffs
-    papers
-    gnome-disk-utility
-    baobab
-    loupe
-    gnome-text-editor
-    gnome-themes-extra
-    adwaita-icon-theme
-    showtime
-    amberol
-  ];
-
-  # XDG Mime
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "inode/directory" = [ "thunar.desktop" ];
-      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-      "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
-      "image/png" = [ "org.gnome.Loupe.desktop" ];
-      "image/svg+xml" = [ "org.gnome.Loupe.desktop" ];
-      "image/gif" = "org.gnome.Loupe.desktop";
-      "image/webp" = "org.gnome.Loupe.desktop";
-      "video/mp4" = [ "org.gnome.Showtime.desktop" ];
-      "video/mkv" = [ "org.gnome.Showtime.desktop" ];
-      "video/webm" = [ "org.gnome.Showtime.desktop" ];
-      "audio/mpeg" = [ "io.bassi.Amberol.desktop" ];
-      "audio/wav" = [ "io.bassi.Amberol.desktop" ];
-      "audio/flac" = [ "io.bassi.Amberol.desktop" ];
-      "audio/ogg" = [ "io.bassi.Amberol.desktop" ];
-      "application/pdf" = [ "org.gnome.Papers.desktop" ];
-      "text/html" = [ "floorp.desktop" ];
-      "x-scheme-handler/http" = [ "floorp.desktop" ];
-      "x-scheme-handler/https" = [ "floorp.desktop" ];
-      "x-scheme-handler/terminal" = [ "com.mitchellh.ghostty.desktop" ];
-    };
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
-      xdg-desktop-portal-gtk
-    ];
-  };
-
-  fonts = {
-    packages = with pkgs; [
-      nerd-fonts.dejavu-sans-mono
-      nerd-fonts.symbols-only
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-    ];
-
-    fontconfig = {
-      enable = true;
-      antialias = true;
-      hinting = {
-        enable = true;
-        style = "slight";
-      };
-      subpixel = {
-        rgba = "rgb";
-        lcdfilter = "default";
-      };
-      defaultFonts = {
-        monospace = [
-          "DejaVu Sans Mono"
-          "Noto Sans Mono"
-        ];
-        sansSerif = [
-          "Noto Sans"
-        ];
-        serif = [
-          "Noto Serif"
-        ];
-        emoji = [ "Noto Color Emoji" ];
-      };
-    };
-  };
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -236,41 +90,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Gaming stuffs and NVIDIA
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      libvdpau-va-gl
-    ];
-  };
-
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-  programs.gamescope = {
-    enable = true;
-    capSysNice = true;
-  };
-  programs.gamemode.enable = true;
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    powerManagement.enable = true;
-    powerManagement.finegrained = false;
-  };
-
-  programs.localsend = {
-    enable = true;
-    openFirewall = true;
-  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -278,5 +97,4 @@
   # networking.firewall.enable = false;
 
   system.stateVersion = "26.05";
-
 }
