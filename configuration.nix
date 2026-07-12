@@ -8,7 +8,6 @@
 
 {
   imports = [
-    inputs.mangowm.nixosModules.mango
     inputs.noctalia.nixosModules.default
     ./hardware-configuration.nix
   ];
@@ -56,23 +55,31 @@
     variant = "";
   };
 
-  programs.mango.enable = true;
+  programs.niri.enable = true;
+  programs.xwayland.enable = true;
   programs.noctalia = {
     enable = true;
     recommendedServices.enable = true;
   };
   services.displayManager = {
-    defaultSession = "mango";
+    defaultSession = "niri";
     ly.enable = true;
   };
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
 
   # Enable ddcutil support globally and create the i2c group
   hardware.i2c.enable = true;
@@ -89,9 +96,7 @@
     PATH = [
       "$HOME/go/bin"
     ];
-  };
-
-  environment.variables = {
+    NIXOS_OZONE_WL = "1";
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "24";
   };
@@ -121,6 +126,7 @@
     p7zip
     ddcutil
     wl-clipboard
+    xwayland-satellite
 
     floorp-bin
 
@@ -162,6 +168,14 @@
       "x-scheme-handler/http" = [ "floorp.desktop" ];
       "x-scheme-handler/https" = [ "floorp.desktop" ];
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
+    ];
   };
 
   fonts = {

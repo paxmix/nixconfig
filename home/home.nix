@@ -9,7 +9,6 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     niri = "niri";
-    mango = "mango";
     noctalia = "noctalia";
     bat = "bat";
     btop = "btop";
