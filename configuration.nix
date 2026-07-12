@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -7,12 +8,17 @@
 
 {
   imports = [
+    inputs.mangowm.nixosModules.mango
+    inputs.noctalia.nixosModules.default
     ./hardware-configuration.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -51,6 +57,10 @@
   };
 
   programs.mango.enable = true;
+  programs.noctalia = {
+    enable = true;
+    recommendedServices.enable = true;
+  };
   services.displayManager = {
     defaultSession = "mango";
     ly.enable = true;
@@ -63,9 +73,6 @@
   #   enable = true;
   #   pulse.enable = true;
   # };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
 
   # Enable ddcutil support globally and create the i2c group
   hardware.i2c.enable = true;
@@ -101,8 +108,6 @@
     ];
   };
 
-  programs.floorp.enable = true;
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -117,13 +122,14 @@
     ddcutil
     wl-clipboard
 
+    floorp-bin
+
     # For Steam
     protonplus
     liberation_ttf
 
     # Gnome Stuffs
     nautilus
-    nautilus-open-any-terminal
     papers
     gnome-disk-utility
     baobab
@@ -139,31 +145,29 @@
     enable = true;
     defaultApplications = {
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
-
       "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-
       "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
       "image/png" = [ "org.gnome.Loupe.desktop" ];
       "image/svg+xml" = [ "org.gnome.Loupe.desktop" ];
-
       "video/mp4" = [ "org.gnome.Showtime.desktop" ];
       "video/mkv" = [ "org.gnome.Showtime.desktop" ];
       "video/webm" = [ "org.gnome.Showtime.desktop" ];
-
       "audio/mpeg" = [ "io.bassi.Amberol.desktop" ];
       "audio/x-wav" = [ "io.bassi.Amberol.desktop" ];
       "audio/x-flac" = [ "io.bassi.Amberol.desktop" ];
       "audio/mp4" = [ "io.bassi.Amberol.desktop" ];
       "audio/ogg" = [ "io.bassi.Amberol.desktop" ];
-
       "application/pdf" = [ "org.gnome.Papers.desktop" ];
+      "text/html" = [ "floorp.desktop" ];
+      "x-scheme-handler/http" = [ "floorp.desktop" ];
+      "x-scheme-handler/https" = [ "floorp.desktop" ];
     };
   };
 
   fonts = {
     packages = with pkgs; [
-      commit-mono
-      nerd-fonts.commit-mono
+      nerd-fonts.dejavu-sans-mono
+      nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
@@ -172,20 +176,17 @@
     fontconfig = {
       enable = true;
       antialias = true;
-
       hinting = {
         enable = true;
         style = "slight";
       };
-
       subpixel = {
         rgba = "rgb";
         lcdfilter = "default";
       };
-
       defaultFonts = {
         monospace = [
-          "CommitMono"
+          "DejaVu Sans Mono"
           "Noto Sans Mono"
         ];
         sansSerif = [
@@ -220,11 +221,6 @@
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
-    extraPackages = with pkgs; [
-      adwaita-icon-theme
-      nautilus
-      xdg-utils
-    ];
   };
   programs.gamescope = {
     enable = true;
@@ -236,7 +232,7 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     powerManagement.enable = true;

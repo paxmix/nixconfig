@@ -5,7 +5,7 @@
   ...
 }:
 let
-  dotfile = "${config.home.homeDirectory}/nixconfig/config";
+  dotfile = "${config.home.homeDirectory}/nixconfig/dotfiles";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     mango = "mango";
@@ -18,13 +18,12 @@ let
 in
 {
   imports = [
-    inputs.noctalia.homeModules.default
-    ./home/git.nix
-    ./home/gtk.nix
-    ./home/zsh.nix
-    ./home/vim.nix
-    ./home/yazi.nix
-    ./home/helix.nix
+    ./config/git.nix
+    ./config/gtk.nix
+    ./config/zsh.nix
+    ./config/vim.nix
+    ./config/yazi.nix
+    ./config/helix.nix
   ];
 
   home.username = "paxmix";
@@ -35,8 +34,6 @@ in
     source = create_symlink "${dotfile}/${subpath}";
     recursive = true;
   }) configs;
-
-  programs.noctalia.enable = true;
 
   home.packages = with pkgs; [
     # CLI

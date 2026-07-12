@@ -41,14 +41,12 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
-              users.paxmix.imports = [ 
-                ./home.nix
+              users.paxmix.imports = [
+                ./home/home.nix
               ];
               backupFileExtension = "backup";
             };
           }
-
-          inputs.mangowm.nixosModules.mango
         ];
       };
     };
