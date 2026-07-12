@@ -95,10 +95,6 @@
             "tmpl"
           ];
         }
-        {
-          name = "kdl";
-          auto-format = true;
-        }
       ];
     };
     extraPackages = with pkgs; [
@@ -111,8 +107,6 @@
       golangci-lint-langserver
       gofumpt
       vscode-langservers-extracted
-
-      kdlfmt
     ];
   };
 }
