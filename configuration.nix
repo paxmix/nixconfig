@@ -23,6 +23,10 @@
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+  networking.networkmanager.insertNameservers = [
+    "9.9.9.9"
+    "1.1.1.1"
+  ];
 
   # Set your time zone.
   time.timeZone = "Asia/Vientiane";
