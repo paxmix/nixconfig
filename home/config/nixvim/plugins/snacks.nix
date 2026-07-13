@@ -6,7 +6,6 @@
 {
   plugins.snacks = {
     enable = true;
-    autoLoad = true;
     settings = {
       dashboard = {
         sections = [
@@ -55,14 +54,26 @@
           (lib.mkIf config.plugins.lazy.enable { section = "startup"; })
         ];
       };
-      picker = {
-        sources = {
-          explorer = {
-            layout = {
-              layout = {
-                position = "right";
-              };
-            };
+      bigfile.enabled = true;
+      quickfile.enabled = true;
+      words.enabled = true;
+      indent = {
+        enabled = true;
+        scope = {
+          enabled = true;
+          character = "▎";
+        };
+      };
+      notifier = {
+        enabled = true;
+        timeout = 3000;
+      };
+      picker.enabled = true;
+      explorer = {
+        enabled = true;
+        layout = {
+          layout = {
+            position = "right";
           };
         };
       };
@@ -70,25 +81,31 @@
   };
   keymaps = [
     {
-      key = "<leader>e";
-      mode = [ "n" ];
-      action = "<cmd>lua Snacks.explorer()<CR>";
-      options = {
-        silent = true;
-        noremap = true;
+      mode = "n";
+      key = "<leader><space>";
+      action = {
+        __raw = "function() Snacks.picker.smart() end";
       };
+      options.desc = "Smart Find Files (Snacks)";
     }
     {
+      mode = "n";
       key = "<leader>/";
-      mode = [ "n" ];
-      action = "<cmd>lua Snacks.picker.grep()<CR>";
-      options = {
-        silent = true;
-        noremap = true;
+      action = {
+        __raw = "function() Snacks.picker.grep() end";
       };
+      options.desc = "Grep Project (Snacks)";
     }
     {
-      key = "<leader>n";
+      mode = "n";
+      key = "<leader>e";
+      action = {
+        __raw = "function() Snacks.explorer() end";
+      };
+      options.desc = "Toggle Right Explorer (Snacks)";
+    }
+    {
+      key = "<leader>nn";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.notifications()<CR>";
       options = {
@@ -97,25 +114,23 @@
       };
     }
     {
-      key = "<leader>fb";
-      mode = [ "n" ];
-      action = "<cmd>lua Snacks.picker.buffers()<CR>";
-      options = {
-        silent = true;
-        noremap = true;
+      mode = "n";
+      key = "<leader>nh";
+      action = {
+        __raw = "function() Snacks.notifier.hide() end";
       };
+      options.desc = "Dismiss Notifications";
+    }
+    {
+      mode = "n";
+      key = "<leader>fb";
+      action = {
+        __raw = "function() Snacks.picker.buffers() end";
+      };
+      options.desc = "Find Buffers (Snacks)";
     }
     {
       key = "<leader>ff";
-      mode = [ "n" ];
-      action = "<cmd>lua Snacks.picker.files()<CR>";
-      options = {
-        silent = true;
-        noremap = true;
-      };
-    }
-    {
-      key = "<leader><leader>";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.files()<CR>";
       options = {
