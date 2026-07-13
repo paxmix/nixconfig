@@ -60,6 +60,9 @@ _: {
           window = {
             border = "rounded";
           };
+          trigger = {
+            show_on_insert = true;
+          };
         };
 
         snippets.preset = "luasnip";
