@@ -22,35 +22,35 @@ in
     ./config/zsh.nix
     ./config/vim.nix
     ./config/yazi.nix
-    # ./config/helix.nix
     ./config/nixvim
   ];
-
-  home.username = "paxmix";
-  home.homeDirectory = "/home/paxmix";
-  home.stateVersion = "26.05";
 
   xdg.configFile = builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfile}/${subpath}";
     recursive = true;
   }) configs;
 
-  home.packages = with pkgs; [
-    # CLI
-    fastfetch
-    tealdeer
-    bat
-    btop
-    lazygit
+  home = {
+    username = "paxmix";
+    homeDirectory = "/home/paxmix";
+    stateVersion = "26.05";
+    packages = with pkgs; [
+      # CLI
+      fastfetch
+      tealdeer
+      bat
+      btop
+      lazygit
 
-    # Programming
-    gcc
-    go
+      # Programming
+      gcc
+      go
 
-    # Apps
-    transmission_4-gtk
-    vesktop
-    libreoffice-fresh
-    mission-center
-  ];
+      # Apps
+      transmission_4-gtk
+      vesktop
+      libreoffice-fresh
+      mission-center
+    ];
+  };
 }
