@@ -12,12 +12,12 @@
         sections = [
           {
             header = ''
-              "██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z"
-              "██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z"    
-              "██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z"       
-              "██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z"         
-              "███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║"           
-              "╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝"
+              ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
+              ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z
+              ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z
+              ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z
+              ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║
+              ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝
             '';
           }
           {
@@ -55,6 +55,17 @@
           (lib.mkIf config.plugins.lazy.enable { section = "startup"; })
         ];
       };
+      picker = {
+        sources = {
+          explorer = {
+            layout = {
+              layout = {
+                position = "right";
+              };
+            };
+          };
+        };
+      };
     };
   };
   keymaps = [
@@ -68,7 +79,7 @@
       };
     }
     {
-      key = "<leader>?";
+      key = "<leader>/";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.grep()<CR>";
       options = {
@@ -96,6 +107,15 @@
     }
     {
       key = "<leader>ff";
+      mode = [ "n" ];
+      action = "<cmd>lua Snacks.picker.files()<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+    }
+    {
+      key = "<leader><leader>";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.files()<CR>";
       options = {
@@ -140,60 +160,45 @@
       };
     }
     {
-      key = "<leader>uC";
-      mode = [ "n" ];
-      action = "<cmd>lua Snacks.picker.colorschemes()<CR>";
-    }
-    {
       key = "<leader>:";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.command_history()<CR>";
     }
     {
-      # Goto Definition
       key = "gd";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.lsp_definitions()<CR>";
     }
     {
-      # Goto Declaration
       key = "gD";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.lsp_declarations()<CR>";
     }
     {
-      # References
       key = "gr";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.lsp_references()<CR>";
     }
     {
-      # Goto Implementation
       key = "gI";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.lsp_implementations()<CR>";
     }
     {
-      # Goto Type Definition (gy)
       key = "gy";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.lsp_type_definitions()<CR>";
     }
-
-    # LSP Symbols
     {
       key = "<leader>ss";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.lsp_symbols()<CR>";
     }
-
-    # LSP Workspace Symbols
     {
       key = "<leader>sS";
       mode = [ "n" ];
       action = "<cmd>lua Snacks.picker.lsp_workspace_symbols()<CR>";
     }
-
     # Buffer
     {
       mode = "n";
