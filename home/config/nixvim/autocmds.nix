@@ -1,7 +1,13 @@
 _: {
+  autoGroups = {
+    highlight_yank.clear = true;
+    last_loc_recovery.clear = true;
+    close_with_q.clear = true;
+    man_unlisted.clear = true;
+  };
   autoCmd = [
-    # Highlight on yank
     {
+      group = "highlight_yank";
       event = [ "TextYankPost" ];
       callback = {
         __raw = ''
@@ -14,8 +20,8 @@ _: {
         '';
       };
     }
-    # go to last loc when opening a buffer
     {
+      group = "last_loc_recovery";
       event = [ "BufReadPost" ];
       callback = {
         __raw = ''
@@ -25,6 +31,57 @@ _: {
             if mark[1] > 0 and mark[1] <= lcount then
               pcall(vim.api.nvim_win_set_cursor, 0, mark)
             end
+          end
+        '';
+      };
+    }
+    {
+      event = [ "FileType" ];
+      group = "close_with_q";
+      pattern = [
+        "PlenaryTestPopup"
+        "checkhealth"
+        "dap-float"
+        "dbout"
+        "gitsigns-blame"
+        "grug-far"
+        "help"
+        "lspinfo"
+        "neotest-output"
+        "neotest-output-panel"
+        "neotest-summary"
+        "notify"
+        "qf"
+        "spectre_panel"
+        "startuptime"
+        "tsplayground"
+      ];
+      callback = {
+        __raw = ''
+          function(event)
+            vim.bo[event.buf].buflisted = false
+            vim.schedule(function()
+              vim.keymap.set("n", "q", function()
+                vim.cmd("close")
+                pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
+              end, {
+                buffer = event.buf,
+                silent = true,
+                desc = "Quit buffer",
+              })
+            end)
+          end
+        '';
+      };
+    }
+    {
+      event = [ "FileType" ];
+      group = "man_unlisted";
+      pattern = [ "man" ];
+      callback = {
+        __raw = ''
+          function(event)
+            vim.bo[event.buf].buflisted = false
           end
         '';
       };
