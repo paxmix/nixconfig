@@ -17,11 +17,14 @@ let
 in
 {
   imports = [
+    ./config/eza.nix
+    ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
-    ./config/zsh.nix
     ./config/vim.nix
     ./config/yazi.nix
+    ./config/zoxide.nix
+    ./config/zsh.nix
     ./config/nixvim
   ];
 

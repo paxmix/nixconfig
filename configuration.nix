@@ -16,18 +16,20 @@
     ./modules/thunar.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  networking.networkmanager.insertNameservers = [
-    "9.9.9.9" # Use Quad9 DNS
-    "1.1.1.1"
-  ];
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+    networkmanager.insertNameservers = [
+      "9.9.9.9" # Use Quad9 DNS
+      "1.1.1.1"
+    ];
+  };
 
   time.timeZone = "Asia/Vientiane";
   i18n.defaultLocale = "en_SG.UTF-8";
@@ -43,21 +45,23 @@
     LC_TIME = "en_SG.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  services = {
+    # Configure keymap in X11
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
 
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
   };
+  security.rtkit.enable = true;
 
   programs.zsh.enable = true;
   environment.localBinInPath = true;
