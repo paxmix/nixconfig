@@ -1,19 +1,27 @@
-{ ... }: {
+{ pkgs, ... }: {
   plugins = {
     lsp = {
       enable = true;
       servers = {
         nixd.enable = true;
         lua_ls.enable = true;
+        gopls.enable = true;
+        golangci_lint_ls.enable = true;
       };
-      keymaps.lspBuf = {
-        "gd" = "definition";
-        "gD" = "declaration";
-        "gr" = "references";
-        "gI" = "implementation";
-        "K" = "hover";
+      keymaps = {
+        lspBuf = {
+          "K" = "hover";
+          "<leader>cr" = "rename";
+          "<leader>ca" = "code_action";
+          "<leader>cf" = "references";
+          "<leader>f" = "format";
+        };
+        diagnostic = {
+          "<leader>cd" = "open_float";
+        };
       };
     };
+
     conform-nvim = {
       enable = true;
       settings = {
@@ -23,8 +31,25 @@
         };
         formatters_by_ft = {
           nix = [ "nixfmt" ];
+          go = [ "gofumpt" ];
         };
       };
     };
+
+    lint = {
+      enable = true;
+      lintersByFt = {
+        nix = [ "statix" ];
+      };
+      autoCmd.event = [ "BufWritePost" ];
+    };
   };
+
+  extraPackages = with pkgs; [
+    statix
+    nixfmt
+
+    gofumpt
+    golangci-lint
+  ];
 }
