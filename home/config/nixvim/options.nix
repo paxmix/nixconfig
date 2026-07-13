@@ -23,7 +23,6 @@
     timeoutlen = 500;
     updatetime = 300;
     hidden = true;
-    autochdir = true;
     clipboard = "unnamedplus";
     cursorline = true;
     scrolloff = 8;

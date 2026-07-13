@@ -1,7 +1,7 @@
 {
   keymaps = [
     {
-      mode = "n";
+      mode = "i";
       key = "jk";
       action = "<esc><esc>";
     }

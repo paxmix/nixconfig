@@ -1,14 +1,9 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  extraPlugins = with pkgs.vimPlugins; [
-    blink-ripgrep-nvim
-  ];
-
   plugins = {
     blink-cmp-dictionary.enable = true;
     blink-cmp-git.enable = true;
     blink-emoji.enable = true;
-    blink-ripgrep.enable = true;
     blink-cmp = {
       enable = true;
       setupLspCapabilities = true;
@@ -22,10 +17,6 @@
           ];
           "<C-e>" = [
             "hide"
-            "fallback"
-          ];
-          "<CR>" = [
-            "accept"
             "fallback"
           ];
           "<Tab>" = [
@@ -54,11 +45,11 @@
             "select_next"
             "fallback"
           ];
-          "<C-up>" = [
+          "<C-u>" = [
             "scroll_documentation_up"
             "fallback"
           ];
-          "<C-down>" = [
+          "<C-d>" = [
             "scroll_documentation_down"
             "fallback"
           ];
@@ -80,14 +71,8 @@
             "dictionary"
             "emoji"
             "git"
-            "ripgrep"
           ];
           providers = {
-            ripgrep = {
-              name = "Ripgrep";
-              module = "blink-ripgrep";
-              score_offset = 1;
-            };
             dictionary = {
               name = "Dict";
               module = "blink-cmp-dictionary";
