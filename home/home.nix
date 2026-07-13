@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -23,7 +22,7 @@ in
     ./config/zsh.nix
     ./config/vim.nix
     ./config/yazi.nix
-    ./config/helix.nix
+    # ./config/helix.nix
     ./config/nixvim
   ];
 
