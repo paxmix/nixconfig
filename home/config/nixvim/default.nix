@@ -20,7 +20,14 @@
 
     colorschemes.tokyonight = {
       enable = true;
-      settings.style = "night";
+      settings = {
+        style = "night";
+        styles = {
+          keywords = {
+            italic = false;
+          };
+        };
+      };
     };
 
     globals = {
