@@ -30,10 +30,7 @@
           lsp_format = "fallback";
         };
         formatters_by_ft = {
-          go = [
-            "goimports"
-            "gofumpt"
-          ];
+          go = [ "goimports" ];
           nix = [ "nixfmt" ];
         };
       };
@@ -52,7 +49,6 @@
     statix
     nixfmt
 
-    gofumpt
     golangci-lint
     gotools
   ];
