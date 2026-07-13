@@ -76,5 +76,36 @@
         desc = "Flash jump";
       };
     }
+    # Alt + j k to move lines
+    {
+      mode = "n";
+      key = "<A-j>";
+      action = "<cmd>execute 'move .+' . v:count1<cr>==";
+    }
+    {
+      mode = "n";
+      key = "<A-k>";
+      action = "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==";
+    }
+    {
+      mode = "i";
+      key = "<A-j>";
+      action = "<esc><cmd>m .+1<cr>==gi";
+    }
+    {
+      mode = "i";
+      key = "<A-k>";
+      action = "<esc><cmd>m .-2<cr>==gi";
+    }
+    {
+      mode = "v";
+      key = "<A-j>";
+      action = ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv";
+    }
+    {
+      mode = "v";
+      key = "<A-k>";
+      action = ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv";
+    }
   ];
 }
