@@ -19,6 +19,10 @@
             "hide"
             "fallback"
           ];
+          "<C-f>" = [
+            "accept"
+            "fallback"
+          ];
           "<Tab>" = [
             "select_next"
             "snippet_forward"
