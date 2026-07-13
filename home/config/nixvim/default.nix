@@ -3,14 +3,21 @@
   programs.nixvim = {
     enable = true;
 
+    defaultEditor = true;
+
     imports = [
       ./options.nix
       ./keymaps.nix
+      ./plugins/blink.nix
+      ./plugins/bufferline.nix
+      ./plugins/lualine.nix
+      ./plugins/mini.nix
+      ./plugins/snacks.nix
     ];
 
     colorschemes.tokyonight = {
       enable = true;
-      settings.style = "night"; # Standard LazyVim default
+      settings.style = "night";
     };
 
     globals = {
@@ -32,6 +39,7 @@
           signature.enabled = true;
         };
       };
+
       luasnip.enable = true;
 
       lsp = {
@@ -48,6 +56,7 @@
           "K" = "hover";
         };
       };
+
       treesitter = {
         enable = true;
         settings.highlight.enable = true;
@@ -66,61 +75,36 @@
         };
       };
 
-      fzf-lua = {
-        enable = true;
-        keymaps = {
-          "<leader><space>" = "files"; # Find files
-          "<leader>/" = "live_grep"; # Grep project
-          "<leader>," = "buffers"; # Switch buffers
-        };
-      };
+      # fzf-lua = {
+      #   enable = true;
+      #   keymaps = {
+      #     "<leader><space>" = "files";
+      #     "<leader>/" = "live_grep";
+      #     "<leader>," = "buffers";
+      #   };
+      # };
 
-      neo-tree = {
-        enable = true;
-        settings = {
-          close_if_last_window = true;
-          window.position = "left";
-        };
-      };
-
-      bufferline = {
-        enable = true;
-        settings.options.diagnostics = "nvim_lsp";
-      };
-
-      lualine.enable = true;
+      # neo-tree = {
+      #   enable = true;
+      #   settings = {
+      #     close_if_last_window = true;
+      #     window.position = "right";
+      #   };
+      # };
 
       gitsigns.enable = true;
 
       flash.enable = true;
-      which-key = {
-        enable = true;
-        settings.spec = [
-          {
-            __unkeyed-1 = "<leader>f";
-            group = "file/find";
-          }
-          {
-            __unkeyed-1 = "<leader>g";
-            group = "git";
-          }
-          {
-            __unkeyed-1 = "<leader>c";
-            group = "code";
-          }
-        ];
-      };
 
-      # Visual indent scope lines
-      mini = {
-        enable = true;
-        modules = {
-          indentscope = {
-            symbol = "│";
-            options.try_as_border = true;
-          };
-          pairs = { };
-        };
+      which-key.enable = true;
+    };
+
+    web-devicons = {
+      enable = true;
+      autoLoad = true;
+      settings = {
+        color_icons = true;
+        strict = true;
       };
     };
 

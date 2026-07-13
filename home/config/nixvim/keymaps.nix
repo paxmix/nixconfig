@@ -1,6 +1,10 @@
 {
   keymaps = [
-    # Clear search highlight with <esc>
+    {
+      mode = "n";
+      key = "jk";
+      action = "<esc><esc>";
+    }
     {
       mode = "n";
       key = "<esc>";
@@ -27,7 +31,7 @@
       key = "<C-l>";
       action = "<C-w>l";
     }
-    # Buffer cycling (Shift + H/L)
+    # Buffer
     {
       mode = "n";
       key = "<S-h>";
@@ -47,7 +51,20 @@
     {
       mode = "v";
       key = ">";
-      action = "<gv";
+      action = ">gv";
+    }
+    # Flash
+    {
+      mode = [
+        "n"
+        "x"
+        "o"
+      ];
+      key = "s";
+      action.__raw = "function() require('flash').jump() end";
+      options = {
+        desc = "Flash jump";
+      };
     }
   ];
 }

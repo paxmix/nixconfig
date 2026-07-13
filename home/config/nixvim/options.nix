@@ -8,6 +8,7 @@
     smartindent = true;
     ignorecase = true;
     smartcase = true;
+    hlsearch = true;
     incsearch = true;
     termguicolors = true;
     signcolumn = "yes";
@@ -24,5 +25,7 @@
     hidden = true;
     autochdir = true;
     clipboard = "unnamedplus";
+    cursorline = true;
+    scrolloff = 8;
   };
 }
