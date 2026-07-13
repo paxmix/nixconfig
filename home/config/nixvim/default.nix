@@ -10,13 +10,13 @@
       ./keymaps.nix
       ./plugins/blink.nix
       ./plugins/bufferline.nix
+      ./plugins/gitsign.nix
       ./plugins/lsp.nix
       ./plugins/mini.nix
+      ./plugins/rustaceanvim.nix
       ./plugins/snacks.nix
       ./plugins/trouble.nix
       ./plugins/treesitter.nix
-      ./plugins/gitsign.nix
-      ./plugins/rustaceanvim.nix
     ];
 
     colorschemes.tokyonight = {
@@ -50,6 +50,7 @@
     extraPackages = with pkgs; [
       ripgrep
       fd
+      trash-cli
     ];
   };
 }
