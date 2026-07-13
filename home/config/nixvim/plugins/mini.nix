@@ -6,7 +6,11 @@ _: {
         n_lines = 100;
         search_method = "cover_or_next";
       };
-      pairs = { };
+      pairs = {
+        mappings = {
+          "'" = false;
+        };
+      };
       surround = {
         mappings = {
           add = "gsa";
