@@ -70,7 +70,8 @@
         ];
         lualine_y = [
           {
-            __unkeyed-1 = "progress";
+            __unkeyed-1 = "lsp_status";
+            icons = "󰒋";
           }
         ];
         lualine_z = [
