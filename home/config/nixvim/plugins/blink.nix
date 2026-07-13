@@ -1,9 +1,5 @@
-{ ... }:
-{
+_: {
   plugins = {
-    blink-cmp-dictionary.enable = true;
-    blink-cmp-git.enable = true;
-    blink-emoji.enable = true;
     blink-cmp = {
       enable = true;
       setupLspCapabilities = true;
@@ -58,6 +54,7 @@
             "fallback"
           ];
         };
+
         signature = {
           enabled = true;
           window = {
@@ -65,50 +62,14 @@
           };
         };
 
+        snippets.preset = "luasnip";
         sources = {
           default = [
-            "buffer"
             "lsp"
             "path"
             "snippets"
-            # Community
-            "dictionary"
-            "emoji"
-            "git"
+            "buffer"
           ];
-          providers = {
-            dictionary = {
-              name = "Dict";
-              module = "blink-cmp-dictionary";
-              min_keyword_length = 3;
-            };
-            emoji = {
-              name = "Emoji";
-              module = "blink-emoji";
-              score_offset = 1;
-            };
-            lsp.score_offset = 4;
-            git = {
-              name = "Git";
-              module = "blink-cmp-git";
-              enabled = true;
-              score_offset = 100;
-              should_show_items.__raw = ''
-                function()
-                  return vim.o.filetype == 'gitcommit' or vim.o.filetype == 'markdown'
-                end
-              '';
-              opts = {
-                git_centers = {
-                  github = {
-                    issue = {
-                      on_error.__raw = "function(_,_) return true end";
-                    };
-                  };
-                };
-              };
-            };
-          };
         };
 
         appearance = {
@@ -188,5 +149,15 @@
         };
       };
     };
+    luasnip = {
+      enable = true;
+      fromVscode = [
+        {
+          lazyLoad = true;
+          paths = "";
+        }
+      ];
+    };
+    friendly-snippets.enable = true;
   };
 }

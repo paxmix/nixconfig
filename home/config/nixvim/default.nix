@@ -36,7 +36,6 @@
     };
 
     plugins = {
-      luasnip.enable = true;
       flash.enable = true;
       which-key.enable = true;
     };
