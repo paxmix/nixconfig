@@ -40,6 +40,12 @@
       which-key.enable = true;
     };
 
+    filetype = {
+      extension = {
+        tmpl = "html";
+      };
+    };
+
     extraPackages = with pkgs; [
       ripgrep
       fd
