@@ -318,6 +318,7 @@
 
   programs.zsh = {
     enable = true;
+    defaultKeymap = "emacs";
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     autocd = true;
@@ -330,7 +331,6 @@
       fi
 
       # Keybinds
-      bindkey -e
       bindkey '^[[H' beginning-of-line      # Home key
       bindkey '^[[F' end-of-line            # End key
       bindkey '^[[3~' delete-char           # Delete key
