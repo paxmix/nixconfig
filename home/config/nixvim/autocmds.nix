@@ -4,6 +4,7 @@ _: {
     last_loc_recovery.clear = true;
     close_with_q.clear = true;
     man_unlisted.clear = true;
+    filetype_indent.clear = true;
   };
   autoCmd = [
     {
@@ -85,6 +86,25 @@ _: {
           end
         '';
       };
+    }
+    {
+      group = "filetype_indent";
+      event = [ "FileType" ];
+      pattern = [
+        "nix"
+        "javascript"
+        "typescript"
+        "html"
+        "css"
+        "json"
+      ];
+      command = "setlocal shiftwidth=2 tabstop=2 softtabstop=2";
+    }
+    {
+      group = "filetype_indent";
+      event = [ "FileType" ];
+      pattern = [ "go" ];
+      command = "setlocal noexpandtab";
     }
   ];
 }

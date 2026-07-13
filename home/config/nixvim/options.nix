@@ -2,8 +2,9 @@
   opts = {
     number = true;
     relativenumber = true;
-    tabstop = 2;
-    shiftwidth = 2;
+    tabstop = 4;
+    shiftwidth = 4;
+    softtabstop = 4;
     expandtab = true;
     smartindent = true;
     ignorecase = true;
