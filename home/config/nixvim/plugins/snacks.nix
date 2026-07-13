@@ -68,15 +68,20 @@
         enabled = true;
         timeout = 3000;
       };
-      picker.enabled = true;
-      explorer = {
+      picker = {
         enabled = true;
-        layout = {
-          layout = {
-            position = "right";
+        sources = {
+          explorer = {
+            enabled = true;
+            layout = {
+              layout = {
+                position = "right";
+              };
+            };
           };
         };
       };
+
     };
   };
   keymaps = [
