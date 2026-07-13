@@ -43,6 +43,7 @@
         formatters_by_ft = {
           go = [ "goimports" ];
           nix = [ "nixfmt" ];
+          rust = [ "rustfmt" ];
         };
       };
     };

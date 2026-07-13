@@ -48,6 +48,11 @@ in
       # Programming
       gcc
       go
+      cargo
+      rustc
+      rustfmt
+      clippy
+      rust-analyzer
 
       # Apps
       transmission_4-gtk

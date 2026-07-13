@@ -16,6 +16,7 @@
       ./plugins/trouble.nix
       ./plugins/treesitter.nix
       ./plugins/gitsign.nix
+      ./plugins/rustaceanvim.nix
     ];
 
     colorschemes.tokyonight = {
