@@ -14,6 +14,7 @@
     ./modules/xdg.nix
     ./modules/desktop.nix
     ./modules/thunar.nix
+    ./modules/nix-options.nix
   ];
 
   boot = {
@@ -85,14 +86,6 @@
       "wheel"
     ];
   };
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
