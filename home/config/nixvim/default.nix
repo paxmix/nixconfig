@@ -2,7 +2,6 @@
 {
   programs.nixvim = {
     enable = true;
-
     defaultEditor = true;
 
     imports = [
@@ -15,6 +14,7 @@
       ./plugins/snacks.nix
       ./plugins/trouble.nix
       ./plugins/treesitter.nix
+      ./plugins/gitsign.nix
     ];
 
     colorschemes.tokyonight = {
@@ -59,11 +59,7 @@
 
     plugins = {
       luasnip.enable = true;
-
-      gitsigns.enable = true;
-
       flash.enable = true;
-
       which-key.enable = true;
     };
 
