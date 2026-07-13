@@ -2,10 +2,11 @@
 {
   environment.systemPackages = with pkgs; [
     nautilus
-    gvfs
-    sushi
   ];
   programs.dconf.enable = true;
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
+  services = {
+    gnome.sushi.enable = true;
+    gvfs.enable = true;
+    tumbler.enable = true;
+  };
 }

@@ -5,7 +5,13 @@ window-rule {
 
 window-rule {
   match app-id="zen-beta"
+  match app-id="org.gnome.Nautilus"
   open-maximized true
+}
+
+window-rule {
+  match app-id="org.gnome.NautilusPreviewer"
+  open-floating true
 }
 
 // if you use steam you will probably like these
