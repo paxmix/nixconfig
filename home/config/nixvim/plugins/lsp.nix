@@ -14,7 +14,7 @@
           "<leader>cr" = "rename";
           "<leader>ca" = "code_action";
           "<leader>cf" = "references";
-          "<leader>f" = "format";
+          "<leader>cs" = "format";
         };
         diagnostic = {
           "<leader>cd" = "open_float";
@@ -30,8 +30,11 @@
           lsp_format = "fallback";
         };
         formatters_by_ft = {
+          go = [
+            "goimports"
+            "gofumpt"
+          ];
           nix = [ "nixfmt" ];
-          go = [ "gofumpt" ];
         };
       };
     };
@@ -51,5 +54,6 @@
 
     gofumpt
     golangci-lint
+    gotools
   ];
 }
