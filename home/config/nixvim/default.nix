@@ -15,6 +15,7 @@
       ./plugins/mini.nix
       ./plugins/snacks.nix
       ./plugins/trouble.nix
+      ./plugins/treesitter.nix
     ];
 
     colorschemes.tokyonight = {
