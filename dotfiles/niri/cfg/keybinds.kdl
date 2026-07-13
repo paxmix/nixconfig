@@ -2,12 +2,12 @@ binds {
   // ─── noctalia-shell keybinds ───
   // https://docs.noctalia.dev/getting-started/keybinds/
 
-  Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
+  Mod+Shift+ESCAPE                    { show-hotkey-overlay; }
 
   // ─── Applications ───
   Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
-  Mod+D                     		  hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
-  Mod+B                               hotkey-overlay-title="Open Browser: Floorp" { spawn "floorp"; }
+  Mod+D                     		      hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+  Mod+B                               hotkey-overlay-title="Open Browser: Zen Browser" { spawn "zen-beta"; }
   Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
   Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
 

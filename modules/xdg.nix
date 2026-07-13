@@ -18,9 +18,9 @@
       "audio/flac" = [ "io.bassi.Amberol.desktop" ];
       "audio/ogg" = [ "io.bassi.Amberol.desktop" ];
       "application/pdf" = [ "org.gnome.Papers.desktop" ];
-      "text/html" = [ "floorp.desktop" ];
-      "x-scheme-handler/http" = [ "floorp.desktop" ];
-      "x-scheme-handler/https" = [ "floorp.desktop" ];
+      "text/html" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/https" = [ "zen-beta.desktop" ];
       "x-scheme-handler/terminal" = [ "com.mitchellh.ghostty.desktop" ];
     };
   };

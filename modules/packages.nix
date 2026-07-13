@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     vim
@@ -13,7 +13,7 @@
     wl-clipboard
     xwayland-satellite
 
-    floorp-bin
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # For Steam
     protonplus
