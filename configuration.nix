@@ -13,7 +13,7 @@
     ./modules/input.nix
     ./modules/xdg.nix
     ./modules/desktop.nix
-    ./modules/thunar.nix
+    ./modules/fm.nix
     ./modules/nix-options.nix
   ];
 

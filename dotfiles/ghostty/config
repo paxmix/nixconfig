@@ -2,6 +2,7 @@ theme = TokyoNight
 
 background-opacity = 0.85
 gtk-tabs-location = bottom
+gtk-single-instance = false
 
 font-family = JetBrainsMonoNL Nerd Font
 font-size = 12
