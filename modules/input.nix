@@ -13,7 +13,8 @@
 
   fonts = {
     packages = with pkgs; [
-      nerd-fonts.dejavu-sans-mono
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -33,7 +34,7 @@
       };
       defaultFonts = {
         monospace = [
-          "DejaVu Sans Mono"
+          "JetBrains Mono NL"
           "Noto Sans Mono"
         ];
         sansSerif = [
