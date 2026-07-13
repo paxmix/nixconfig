@@ -6,6 +6,16 @@
       action = "<esc><esc>";
     }
     {
+      mode = "i";
+      key = "<C-e>";
+      action = "<End>";
+    }
+    {
+      mode = "i";
+      key = "<C-a>";
+      action = "<Home>";
+    }
+    {
       mode = "n";
       key = "<esc>";
       action = "<cmd>noh<cr>";
