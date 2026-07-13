@@ -1,8 +1,30 @@
 _: {
   plugins.treesitter = {
     enable = true;
-    settings.indent = {
-      enable = true;
+    settings = {
+      ensure_installed = [
+        "c"
+        "cpp"
+        "go"
+        "html"
+        "json"
+        "nix"
+        "xml"
+        "typescript"
+        "lua"
+        "vim"
+        "markdown"
+        "python"
+        "nix"
+        "rust"
+      ];
+      sync_install = false;
+      auto_install = true;
+      highlight = {
+        enable = true;
+        additional_vim_regex_highlighting = false;
+      };
+      indent.enable = true;
     };
   };
 
