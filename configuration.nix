@@ -71,7 +71,7 @@
       "$HOME/go/bin"
     ];
     NIXOS_OZONE_WL = "1";
-    XCURSOR_THEME = "Adwaita";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
   };
 

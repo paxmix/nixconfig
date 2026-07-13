@@ -4,9 +4,9 @@
     enable = true;
 
     cursorTheme = {
-      name = "Adwaita";
+      name = "Bibata-Modern-Ice";
       size = 24;
-      package = pkgs.adwaita-icon-theme;
+      package = pkgs.bibata-cursors;
     };
 
     iconTheme = {

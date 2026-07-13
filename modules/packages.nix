@@ -26,9 +26,10 @@
     loupe
     gnome-text-editor
     gnome-themes-extra
-    adwaita-icon-theme
     showtime
     amberol
+
+    bibata-cursors
   ];
 
   programs.localsend = {
