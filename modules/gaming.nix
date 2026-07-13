@@ -13,6 +13,10 @@
     steam = {
       enable = true;
       gamescopeSession.enable = true;
+
+      extraPackages = with pkgs; [
+        adwaita-icon-theme
+      ];
     };
     gamescope = {
       enable = true;
