@@ -26,26 +26,33 @@ _: {
             __raw = ''
               function()
                 local statusline = require('mini.statusline')
-                
-                -- Gather standard mini.statusline data pieces
                 local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
                 local git           = statusline.section_git({ trunc_width = 75 })
                 local diff          = statusline.section_diff({ trunc_width = 75 })
                 local diagnostics   = statusline.section_diagnostics({ trunc_width = 75 })
-                local lsp           = statusline.section_lsp({ trunc_width = 75 })
                 local filename      = statusline.section_filename({ trunc_width = 140 })
                 local fileinfo      = statusline.section_fileinfo({ trunc_width = 120 })
                 local location      = statusline.section_location({ trunc_width = 120 })
 
-                -- Assemble the blocks using mini's combine_groups utility.
-                -- This sets up the look, standard colors, and separator alignment.
+                local get_lsp_name = function()
+                  local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
+                  if #buf_clients == 0 then
+                    return ""
+                  end
+                  return "󰒋 " .. buf_clients[1].name
+                end
+
+                local lsp_active_name = get_lsp_name()
+
                 return statusline.combine_groups({
                   { hl = mode_hl,                  strings = { mode } },
                   { hl = 'MiniStatuslineDevinfo',  strings = { git, diff, diagnostics } },
-                  '%<', -- Mark where text should truncate if the window gets too small
+                  '%<', 
                   { hl = 'MiniStatuslineFilename', strings = { filename } },
-                  '%=', -- Separation point: aligns everything after this to the right side
-                  { hl = 'MiniStatuslineFileinfo', strings = { lsp, fileinfo } },
+                  '%=', 
+                  
+                  { hl = 'MiniStatuslineFilename', strings = { lsp_active_name } },
+                  { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
                   { hl = mode_hl,                  strings = { location } },
                 })
               end
@@ -56,6 +63,13 @@ _: {
 
       icons = {
         style = "glyph";
+      };
+      hipatterns = {
+        highlighters = {
+          hex_color = {
+            __raw = "require('mini.hipatterns').gen_highlighter.hex_color()";
+          };
+        };
       };
     };
     mockDevIcons = true;
