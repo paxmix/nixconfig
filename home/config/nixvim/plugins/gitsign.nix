@@ -4,22 +4,42 @@ _: {
     settings = {
       signs = {
         add = {
-          text = " ";
+          text = "▎";
         };
         change = {
-          text = " ";
+          text = "▎";
         };
         delete = {
-          text = " ";
+          text = "";
         };
         untracked = {
-          text = "";
+          text = "▎";
         };
         topdelete = {
-          text = "󱂥 ";
+          text = "";
         };
         changedelete = {
-          text = "󱂧 ";
+          text = "▎";
+        };
+      };
+      signs_staged = {
+        add = {
+          text = "▎";
+        };
+        change = {
+          text = "▎";
+        };
+        delete = {
+          text = "";
+        };
+        untracked = {
+          text = "▎";
+        };
+        topdelete = {
+          text = "";
+        };
+        changedelete = {
+          text = "▎";
         };
       };
     };
