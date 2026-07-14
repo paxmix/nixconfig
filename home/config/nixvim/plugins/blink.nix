@@ -6,11 +6,6 @@ _: {
 
       settings = {
         keymap = {
-          "<C-space>" = [
-            "show"
-            "show_documentation"
-            "hide_documentation"
-          ];
           "<C-e>" = [
             "hide"
             "fallback"
@@ -20,13 +15,7 @@ _: {
             "fallback"
           ];
           "<Tab>" = [
-            "select_next"
-            "snippet_forward"
-            "fallback"
-          ];
-          "<S-Tab>" = [
-            "select_prev"
-            "snippet_backward"
+            "accept"
             "fallback"
           ];
           "<Up>" = [
