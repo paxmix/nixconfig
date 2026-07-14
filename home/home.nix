@@ -10,7 +10,6 @@ let
     bat = "bat";
     btop = "btop";
     ghostty = "ghostty";
-    helix = "helix";
     lazygit = "lazygit";
     niri = "niri";
     noctalia = "noctalia";
@@ -24,13 +23,13 @@ in
     ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
-    ./config/helix.nix
     ./config/sesh.nix
     ./config/vim.nix
     ./config/xdg.nix
     ./config/yazi.nix
     ./config/zoxide.nix
     ./config/zsh.nix
+    ./config/nixvim
   ];
 
   xdg.configFile = builtins.mapAttrs (name: subpath: {
