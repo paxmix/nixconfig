@@ -57,6 +57,7 @@ in
       rustfmt
       clippy
       rust-analyzer
+      lldb
 
       # Apps
       transmission_4-gtk
