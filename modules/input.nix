@@ -34,7 +34,7 @@
       };
       defaultFonts = {
         monospace = [
-          "JetBrains Mono"
+          "JetBrains Mono NL"
           "Noto Sans Mono"
         ];
         sansSerif = [
