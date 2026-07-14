@@ -14,10 +14,6 @@ _: {
             "accept"
             "fallback"
           ];
-          "<Tab>" = [
-            "accept"
-            "fallback"
-          ];
           "<Up>" = [
             "select_prev"
             "fallback"
