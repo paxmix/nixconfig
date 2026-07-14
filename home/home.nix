@@ -23,6 +23,7 @@ in
     ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
+    ./config/sesh.nix
     ./config/vim.nix
     ./config/yazi.nix
     ./config/zoxide.nix
@@ -47,7 +48,6 @@ in
       btop
       lazygit
       tmux
-      sesh
 
       # Programming
       gcc
