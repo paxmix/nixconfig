@@ -13,9 +13,8 @@
 
   fonts = {
     packages = with pkgs; [
-      fira-code
-      cascadia-code
-      nerd-fonts.fira-code
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -35,7 +34,7 @@
       };
       defaultFonts = {
         monospace = [
-          "Fira Code"
+          "JetBrains Mono"
           "Noto Sans Mono"
         ];
         sansSerif = [
