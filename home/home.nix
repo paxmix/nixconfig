@@ -10,6 +10,7 @@ let
     bat = "bat";
     btop = "btop";
     ghostty = "ghostty";
+    helix = "helix";
     lazygit = "lazygit";
     niri = "niri";
     noctalia = "noctalia";
