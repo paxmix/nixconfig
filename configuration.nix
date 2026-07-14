@@ -76,6 +76,16 @@
   };
 
   hardware.i2c.enable = true; # For ddcutil
+
+  # Docker setup
+  virtualisation.docker = {
+    enable = true;
+    autoPrune = {
+      enable = true;
+      dates = "weekly";
+    };
+  };
+
   users.users.paxmix = {
     isNormalUser = true;
     description = "Pham Duc Manh";
@@ -84,6 +94,7 @@
       "i2c"
       "networkmanager"
       "wheel"
+      "docker"
     ];
   };
 
