@@ -73,6 +73,8 @@
     NIXOS_OZONE_WL = "1";
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
+    # prevent wine from creating file associations
+    WINEDLLOVERRIDES = "winemenubuilder.exe=d";
   };
 
   hardware.i2c.enable = true; # For ddcutil
