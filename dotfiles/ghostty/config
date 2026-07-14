@@ -3,7 +3,7 @@ theme = TokyoNight
 background-opacity = 0.85
 gtk-tabs-location = bottom
 
-font-family = JetBrains Mono NL
+font-family = Monaspace Neon Frozen
 font-size = 12
 
 window-padding-x = 5
