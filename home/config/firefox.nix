@@ -17,7 +17,6 @@
       };
       settings = {
         "browser.startup.page" = 3;
-        "extensions.formautofill.creditCards.enabled" = false;
         "media.ffmpeg.vaapi.enabled" = true;
         "ui.key.menuAccessKeyFocuses" = false;
       };
