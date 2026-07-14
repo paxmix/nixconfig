@@ -49,6 +49,8 @@ in
       btop
       lazygit
       tmux
+      sqlite
+      imagemagick
 
       # Programming
       gcc
