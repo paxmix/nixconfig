@@ -68,7 +68,6 @@ in
       transmission_4-gtk
       vesktop
       libreoffice-fresh
-      mission-center
     ];
   };
 }
