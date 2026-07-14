@@ -7,12 +7,13 @@ let
   dotfile = "${config.home.homeDirectory}/nixconfig/dotfiles";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    niri = "niri";
-    noctalia = "noctalia";
     bat = "bat";
     btop = "btop";
     ghostty = "ghostty";
     lazygit = "lazygit";
+    niri = "niri";
+    noctalia = "noctalia";
+    tmux = "tmux";
   };
 in
 {
@@ -45,6 +46,8 @@ in
       bat
       btop
       lazygit
+      tmux
+      sesh
 
       # Programming
       gcc
