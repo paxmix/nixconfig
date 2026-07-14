@@ -4,7 +4,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id="zen-beta"
+  match app-id="firefox"
   match app-id="org.gnome.Nautilus"
   open-maximized true
 }

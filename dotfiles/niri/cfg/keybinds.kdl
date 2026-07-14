@@ -7,7 +7,7 @@ binds {
   // ─── Applications ───
   Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
   Mod+D                     	      hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
-  Mod+B                               hotkey-overlay-title="Open Browser: Zen Browser" { spawn "zen-beta"; }
+  Mod+B                               hotkey-overlay-title="Open Browser: Firefox" { spawn "firefox"; }
   Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
   Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
 
