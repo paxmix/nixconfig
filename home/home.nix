@@ -18,6 +18,7 @@ in
 {
   imports = [
     ./config/eza.nix
+    ./config/firefox.nix
     ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
