@@ -14,6 +14,8 @@
       golangci-lint-langserver
       gofumpt
       vscode-langservers-extracted
+
+      clang-tools
     ];
   };
 }

@@ -54,6 +54,9 @@ in
       # Programming
       gcc
       go
+      gnumake
+      cmake
+
       cargo
       rustc
       rustfmt
