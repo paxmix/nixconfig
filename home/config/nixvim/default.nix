@@ -2,7 +2,7 @@
 {
   programs.nixvim = {
     enable = true;
-    defaultEditor = true;
+    # defaultEditor = true;
 
     imports = [
       ./autocmds.nix

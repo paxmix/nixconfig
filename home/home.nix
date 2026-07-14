@@ -23,6 +23,7 @@ in
     ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
+    ./config/helix.nix
     ./config/sesh.nix
     ./config/vim.nix
     ./config/yazi.nix
