@@ -2,6 +2,24 @@ _: {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    # FZF_CTRL_T_OPTS
+    fileWidget.options = [
+      "--walker-skip .git,node_modules,target"
+      "--preview 'bat -n --color=always {}'"
+      "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
+    ];
+    # FZF_CTRL_R_OPTS
+    historyWidget.options = [
+      "--bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'"
+      "--color header:italic"
+      "--header 'Press CTRL-Y to copy command into clipboard'"
+    ];
+    # FZF_ALT_C_OPTS
+    changeDirWidget.options = [
+      "--walker-skip .git,node_modules,target"
+      "--preview 'tree -C {}'"
+    ];
+
     defaultOptions = [
       "--highlight-line"
       "--info=inline-right"
