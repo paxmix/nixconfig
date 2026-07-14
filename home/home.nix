@@ -29,7 +29,6 @@ in
     ./config/yazi.nix
     ./config/zoxide.nix
     ./config/zsh.nix
-    ./config/nixvim
   ];
 
   xdg.configFile = builtins.mapAttrs (name: subpath: {
