@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
   programs = {
     niri.enable = true;
     xwayland.enable = true;
@@ -7,8 +7,17 @@ _: {
       recommendedServices.enable = true;
     };
   };
-  services.displayManager = {
-    defaultSession = "niri";
-    ly.enable = true;
+  programs.noctalia-greeter = {
+    enable = true;
+    settings = {
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 24;
+        path = "${pkgs.bibata-cursors}/share/icons";
+      };
+      keyboard = {
+        layout = "us";
+      };
+    };
   };
 }
