@@ -178,5 +178,47 @@ _: {
       key = "<leader>bo";
       action = "<cmd>lua Snacks.bufdelete.other()<cr>";
     }
+    # 1. Terminal (cwd)
+    {
+      mode = "n";
+      key = "<leader>fT";
+      action.__raw = "function() Snacks.terminal() end";
+      options = {
+        desc = "Terminal (cwd)";
+      };
+    }
+    # 2. Terminal (Root Dir)
+    {
+      mode = "n";
+      key = "<leader>ft";
+      action.__raw = "function() Snacks.terminal(nil, { cwd = vim.fn.getcwd() }) end";
+      options = {
+        desc = "Terminal (Root Dir)";
+      };
+    }
+    # 3. Terminal focus / toggle from normal and terminal modes
+    {
+      mode = [
+        "n"
+        "t"
+      ];
+      key = "<c-/>";
+      action.__raw = "function() Snacks.terminal.focus(nil, { cwd = vim.fn.getcwd() }) end";
+      options = {
+        desc = "Terminal (Root Dir)";
+      };
+    }
+    # 4. Fallback for terminals that interpret Ctrl+/ as Ctrl+_
+    {
+      mode = [
+        "n"
+        "t"
+      ];
+      key = "<c-_>";
+      action.__raw = "function() Snacks.terminal.focus(nil, { cwd = vim.fn.getcwd() }) end";
+      options = {
+        desc = "which_key_ignore";
+      };
+    }
   ];
 }
