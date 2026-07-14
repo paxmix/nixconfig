@@ -45,3 +45,11 @@ command = "clippy"
 '"' = '"'
 '`' = '`'
 '<' = '>'
+
+[[language]]
+name = "c"
+auto-format = true
+
+[[language]]
+name = "cpp"
+auto-format = true
