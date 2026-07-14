@@ -11,6 +11,7 @@
     ddcutil
     wl-clipboard
     xwayland-satellite
+    ghostty
 
     # For Steam
     protonplus

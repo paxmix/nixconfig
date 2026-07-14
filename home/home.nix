@@ -22,7 +22,6 @@ in
     ./config/eza.nix
     ./config/firefox.nix
     ./config/fzf.nix
-    ./config/ghostty.nix
     ./config/git.nix
     ./config/gtk.nix
     ./config/helix.nix

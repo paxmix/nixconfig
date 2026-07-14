@@ -8,11 +8,9 @@ font-family-bold = Fira Code
 font-family-italic = Cascadia Code
 font-family-bold-italic = Cascadia Code
 font-size = 12
-adjust-underline-position = 4
+adjust-underline-position = 2
 
 window-padding-x = 5
 window-padding-y = 5
 
 confirm-close-surface = false
-
-quit-after-last-window-closed = false
