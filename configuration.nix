@@ -11,7 +11,6 @@
     ./modules/nvidia.nix
     ./modules/packages.nix
     ./modules/input.nix
-    ./modules/xdg.nix
     ./modules/desktop.nix
     ./modules/fm.nix
     ./modules/nix-options.nix

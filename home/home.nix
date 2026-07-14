@@ -27,6 +27,7 @@ in
     ./config/helix.nix
     ./config/sesh.nix
     ./config/vim.nix
+    ./config/xdg.nix
     ./config/yazi.nix
     ./config/zoxide.nix
     ./config/zsh.nix
