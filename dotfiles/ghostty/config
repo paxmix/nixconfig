@@ -3,7 +3,7 @@ theme = TokyoNight
 background-opacity = 0.85
 gtk-tabs-location = bottom
 
-font-family = CommitMono
+font-family = Source Code Pro
 font-size = 12
 
 window-padding-x = 5
