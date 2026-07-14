@@ -12,7 +12,7 @@
       delve
       golangci-lint
       golangci-lint-langserver
-      gofumpt
+      gotools
       vscode-langservers-extracted
 
       clang-tools
