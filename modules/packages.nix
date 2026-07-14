@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    ghostty
     curl
     wget
     unzip
