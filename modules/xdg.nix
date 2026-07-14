@@ -1,28 +1,90 @@
-{ pkgs, ... }:
+{ lib, ... }:
+with lib;
+let
+  defaultApps = {
+    text = [ "org.gnome.TextEditor.desktop" ];
+    image = [ "org.gnome.Loupe.desktop" ];
+    audio = [ "io.bassi.Amberol.desktop" ];
+    video = [ "org.gnome.Showtime.desktop" ];
+    directory = [ "org.gnome.Nautilus.desktop" ];
+    office = [ "libreoffice.desktop" ];
+    pdf = [ "org.gnome.Papers.desktop" ];
+    terminal = [ "com.mitchellh.ghostty.desktop" ];
+    archive = [ "org.gnome.FileRoller.desktop" ];
+    discord = [ "vesktop.desktop" ];
+  };
+
+  mimeMap = {
+    text = [ "text/plain" ];
+    image = [
+      "image/bmp"
+      "image/gif"
+      "image/jpeg"
+      "image/jpg"
+      "image/png"
+      "image/svg+xml"
+      "image/tiff"
+      "image/vnd.microsoft.icon"
+      "image/webp"
+    ];
+    audio = [
+      "audio/aac"
+      "audio/mpeg"
+      "audio/ogg"
+      "audio/opus"
+      "audio/wav"
+      "audio/webm"
+      "audio/x-matroska"
+    ];
+    video = [
+      "video/mp2t"
+      "video/mp4"
+      "video/mpeg"
+      "video/ogg"
+      "video/webm"
+      "video/x-flv"
+      "video/x-matroska"
+      "video/x-msvideo"
+    ];
+    directory = [ "inode/directory" ];
+    office = [
+      "application/vnd.oasis.opendocument.text"
+      "application/vnd.oasis.opendocument.spreadsheet"
+      "application/vnd.oasis.opendocument.presentation"
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      "application/msword"
+      "application/vnd.ms-excel"
+      "application/vnd.ms-powerpoint"
+      "application/rtf"
+    ];
+    pdf = [ "application/pdf" ];
+    terminal = [ "terminal" ];
+    archive = [
+      "application/zip"
+      "application/rar"
+      "application/7z"
+      "application/*tar"
+    ];
+    discord = [ "x-scheme-handler/discord" ];
+  };
+
+  associations =
+    with lists;
+    listToAttrs (
+      flatten (mapAttrsToList (key: map (type: attrsets.nameValuePair type defaultApps."${key}")) mimeMap)
+    );
+in
 {
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
-      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-      "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
-      "image/png" = [ "org.gnome.Loupe.desktop" ];
-      "image/svg+xml" = [ "org.gnome.Loupe.desktop" ];
-      "image/gif" = "org.gnome.Loupe.desktop";
-      "image/webp" = "org.gnome.Loupe.desktop";
-      "video/mp4" = [ "org.gnome.Showtime.desktop" ];
-      "video/mkv" = [ "org.gnome.Showtime.desktop" ];
-      "video/webm" = [ "org.gnome.Showtime.desktop" ];
-      "audio/mpeg" = [ "io.bassi.Amberol.desktop" ];
-      "audio/wav" = [ "io.bassi.Amberol.desktop" ];
-      "audio/flac" = [ "io.bassi.Amberol.desktop" ];
-      "audio/ogg" = [ "io.bassi.Amberol.desktop" ];
-      "application/pdf" = [ "org.gnome.Papers.desktop" ];
-      "text/html" = [ "firefox.desktop" ];
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
-      "x-scheme-handler/terminal" = [ "com.mitchellh.ghostty.desktop" ];
-    };
+  xdg.configFile."mimeapps.list".force = true;
+  xdg.mimeApps.enable = true;
+  xdg.mimeApps.associations.added = associations;
+  xdg.mimeApps.defaultApplications = associations;
+
+  home.sessionVariables = {
+    # prevent wine from creating file associations
+    WINEDLLOVERRIDES = "winemenubuilder.exe=d";
   };
 
   xdg.portal = {

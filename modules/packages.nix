@@ -26,6 +26,7 @@
     gnome-themes-extra
     showtime
     amberol
+    file-roller
 
     bibata-cursors
   ];
