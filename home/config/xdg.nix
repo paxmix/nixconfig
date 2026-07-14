@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 with lib;
 let
   defaultApps = {
@@ -88,5 +88,13 @@ in
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
     ];
+    config = {
+      common = {
+        default = [
+          "gnome"
+          "gtk"
+        ];
+      };
+    };
   };
 }
