@@ -5,8 +5,8 @@ gtk-tabs-location = bottom
 
 font-family = Fira Code
 font-family-bold = Fira Code
-font-family-italic = JetBrains Mono
-font-family-bold-italic = JetBrains Mono
+font-family-italic = Cascadia Code
+font-family-bold-italic = Cascadia Code
 font-size = 12
 adjust-underline-position = 4
 

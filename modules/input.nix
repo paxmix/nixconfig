@@ -14,7 +14,7 @@
   fonts = {
     packages = with pkgs; [
       fira-code
-      jetbrains-mono
+      cascadia-code
       nerd-fonts.fira-code
       nerd-fonts.symbols-only
       noto-fonts
