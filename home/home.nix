@@ -24,11 +24,11 @@ in
     ./config/gtk.nix
     ./config/qt.nix
     ./config/sesh.nix
+    ./config/shell.nix
     ./config/vim.nix
     ./config/xdg.nix
     ./config/yazi.nix
     ./config/zoxide.nix
-    ./config/zsh.nix
     ./config/nixvim
   ];
 

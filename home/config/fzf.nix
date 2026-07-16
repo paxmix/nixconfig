@@ -1,7 +1,7 @@
 _: {
   programs.fzf = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
     tmux.enableShellIntegration = true;
     # FZF_CTRL_T_OPTS
     fileWidget.options = [

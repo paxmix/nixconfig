@@ -63,7 +63,6 @@
   };
   security.rtkit.enable = true;
 
-  programs.zsh.enable = true;
   environment.localBinInPath = true;
   environment.sessionVariables = {
     PATH = [
@@ -87,10 +86,11 @@
   #   };
   # };
 
+  programs.fish.enable = true;
   users.users.paxmix = {
     isNormalUser = true;
     description = "Pham Duc Manh";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     extraGroups = [
       "i2c"
       "networkmanager"
