@@ -2,7 +2,6 @@ _: {
   programs.foot = {
     enable = true;
     theme = "tokyonight-night";
-    xdg.serverAutostart = true;
     settings = {
       main = {
         font = "Hack Nerd Font:size=12";
