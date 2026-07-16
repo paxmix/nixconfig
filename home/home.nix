@@ -9,7 +9,7 @@ let
   configs = {
     bat = "bat";
     btop = "btop";
-    foot = "foot";
+    # foot = "foot";
     ghostty = "ghostty";
     lazygit = "lazygit";
     niri = "niri";

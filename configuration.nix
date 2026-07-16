@@ -14,6 +14,7 @@
     ./modules/desktop.nix
     ./modules/fm.nix
     ./modules/nix-options.nix
+    ./modules/term.nix
   ];
 
   boot = {

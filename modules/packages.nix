@@ -11,7 +11,6 @@
     ddcutil
     wl-clipboard
     xwayland-satellite
-    foot
 
     # For Steam
     protonplus
