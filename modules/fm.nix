@@ -8,5 +8,6 @@
     gnome.sushi.enable = true;
     gvfs.enable = true;
     tumbler.enable = true;
+    udisks2.enable = true;
   };
 }
