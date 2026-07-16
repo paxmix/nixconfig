@@ -13,8 +13,8 @@
 
   fonts = {
     packages = with pkgs; [
-      hack-font
-      nerd-fonts.hack
+      recursive
+      nerd-fonts.recursive-mono
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -34,7 +34,7 @@
       };
       defaultFonts = {
         monospace = [
-          "Hack Nerd Font"
+          "RecMonoDuotone Nerd Font"
           "Noto Sans Mono"
         ];
         sansSerif = [
