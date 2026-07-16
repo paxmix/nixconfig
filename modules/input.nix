@@ -19,7 +19,10 @@
       inter
       noto-fonts
       noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-emoji-blob-bin
       noto-fonts-color-emoji
+      noto-fonts-monochrome-emoji
     ];
 
     fontconfig = {
@@ -41,12 +44,31 @@
         sansSerif = [
           "Inter"
           "Noto Sans"
+          "Noto Sans Lao"
         ];
         serif = [
           "Noto Serif"
         ];
-        emoji = [ "Noto Color Emoji" ];
+        emoji = [
+          "Noto Emoji"
+          "Noto Color Emoji"
+        ];
       };
+
+      localConf = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <match target="pattern">
+            <test name="family" qual="any">
+              <string>Helvetica</string>
+            </test>
+            <edit name="family" mode="assign" binding="same">
+              <string>Inter</string>
+            </edit>
+          </match>
+        </fontconfig>
+      '';
     };
   };
 }
