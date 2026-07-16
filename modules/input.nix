@@ -13,8 +13,8 @@
 
   fonts = {
     packages = with pkgs; [
-      recursive
-      nerd-fonts.recursive-mono
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -34,7 +34,7 @@
       };
       defaultFonts = {
         monospace = [
-          "RecMonoDuotone Nerd Font"
+          "JetBrainsMonoNL Nerd Font"
           "Noto Sans Mono"
         ];
         sansSerif = [
