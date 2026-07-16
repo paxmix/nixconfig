@@ -9,7 +9,6 @@ let
   configs = {
     bat = "bat";
     btop = "btop";
-    ghostty = "ghostty";
     lazygit = "lazygit";
     mango = "mango";
     noctalia = "noctalia";
