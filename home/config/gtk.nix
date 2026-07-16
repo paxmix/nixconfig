@@ -29,7 +29,7 @@
     };
 
     "org/gnome/desktop/default-applications/terminal" = {
-      exec = "ghostty";
+      exec = "footclient";
     };
   };
 }
