@@ -9,7 +9,6 @@ let
   configs = {
     bat = "bat";
     btop = "btop";
-    # foot = "foot";
     ghostty = "ghostty";
     lazygit = "lazygit";
     niri = "niri";
@@ -24,6 +23,7 @@ in
     ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
+    ./config/qt.nix
     ./config/sesh.nix
     ./config/vim.nix
     ./config/xdg.nix
