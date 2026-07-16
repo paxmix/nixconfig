@@ -13,8 +13,8 @@
 
   fonts = {
     packages = with pkgs; [
-      mononoki
-      nerd-fonts.mononoki
+      commit-mono
+      nerd-fonts.commit-mono
       nerd-fonts.symbols-only
       inter
       merriweather
@@ -39,7 +39,7 @@
       };
       defaultFonts = {
         monospace = [
-          "Mononoki Nerd Font"
+          "CommitMono Nerd Font"
           "Noto Sans Mono"
         ];
         sansSerif = [
