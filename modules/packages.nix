@@ -10,7 +10,7 @@
     p7zip
     ddcutil
     wl-clipboard
-    xwayland-satellite
+    wlr-randr
 
     # For Steam
     protonplus
