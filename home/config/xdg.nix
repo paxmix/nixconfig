@@ -5,7 +5,7 @@ let
     text = [ "org.gnome.TextEditor.desktop" ];
     image = [ "org.gnome.Loupe.desktop" ];
     audio = [ "io.bassi.Amberol.desktop" ];
-    video = [ "org.gnome.Showtime.desktop" ];
+    video = [ "vlc.desktop" ];
     directory = [ "org.gnome.Nautilus.desktop" ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.gnome.Papers.desktop" ];

@@ -16,8 +16,6 @@
     protonplus
     liberation_ttf
 
-    evtest
-
     # Gnome Apps
     papers
     gnome-disk-utility
@@ -25,9 +23,10 @@
     loupe
     gnome-text-editor
     gnome-themes-extra
-    showtime
     amberol
     file-roller
+
+    vlc
 
     bibata-cursors
   ];
