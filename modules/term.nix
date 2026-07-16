@@ -9,13 +9,13 @@ _: {
         pad = "8x8 center-when-maximized-and-fullscreen";
       };
       bell = {
-        system = false;
+        system = "no";
       };
       scrollback = {
         lines = 10000;
       };
       mouse = {
-        hide-when-typing = true;
+        hide-when-typing = "yes";
       };
       colors-dark = {
         alpha = 0.9;
