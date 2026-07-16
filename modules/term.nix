@@ -17,9 +17,6 @@ _: {
       mouse = {
         hide-when-typing = "yes";
       };
-      colors-dark = {
-        alpha = 0.9;
-      };
     };
   };
 }
