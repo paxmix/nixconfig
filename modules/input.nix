@@ -17,6 +17,7 @@
       nerd-fonts.mononoki
       nerd-fonts.symbols-only
       inter
+      merriweather
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -47,6 +48,7 @@
           "Noto Sans Lao"
         ];
         serif = [
+          "Merriweather"
           "Noto Serif"
         ];
         emoji = [
