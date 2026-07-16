@@ -13,7 +13,8 @@
 
   fonts = {
     packages = with pkgs; [
-      monaspace
+      hack-font
+      nerd-fonts.hack
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -33,7 +34,7 @@
       };
       defaultFonts = {
         monospace = [
-          "Monaspace Neon Frozen"
+          "Hack Nerd Font"
           "Noto Sans Mono"
         ];
         sansSerif = [
