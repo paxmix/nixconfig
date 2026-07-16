@@ -17,6 +17,8 @@
     protonplus
     liberation_ttf
 
+    evtest
+
     # Gnome Apps
     papers
     gnome-disk-utility
