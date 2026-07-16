@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   programs = {
-    niri.enable = true;
-    xwayland.enable = true;
+    mango.enable = true;
     noctalia = {
       enable = true;
       recommendedServices.enable = true;

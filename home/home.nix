@@ -11,7 +11,7 @@ let
     btop = "btop";
     ghostty = "ghostty";
     lazygit = "lazygit";
-    niri = "niri";
+    mango = "mango";
     noctalia = "noctalia";
     tmux = "tmux";
   };

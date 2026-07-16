@@ -18,6 +18,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim.url = "github:nix-community/nixvim";
   };
 
@@ -36,6 +41,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          inputs.mangowm.nixosModules.mango
           inputs.noctalia-greeter.nixosModules.default
           ./configuration.nix
           home-manager.nixosModules.home-manager
