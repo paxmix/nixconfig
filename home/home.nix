@@ -25,6 +25,7 @@ in
     ./config/qt.nix
     ./config/sesh.nix
     ./config/shell.nix
+    ./config/starship.nix
     ./config/vim.nix
     ./config/xdg.nix
     ./config/yazi.nix
