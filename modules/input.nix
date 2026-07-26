@@ -62,7 +62,7 @@
               <string>Helvetica</string>
             </test>
             <edit name="family" mode="assign" binding="same">
-              <string>Inter</string>
+              <string>Noto Sans</string>
             </edit>
           </match>
         </fontconfig>
