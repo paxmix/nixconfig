@@ -25,10 +25,6 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-    networkmanager.insertNameservers = [
-      "9.9.9.9" # Use Quad9 DNS
-      "1.1.1.1"
-    ];
   };
 
   time.timeZone = "Asia/Vientiane";
