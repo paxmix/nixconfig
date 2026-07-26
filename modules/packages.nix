@@ -5,9 +5,12 @@
     git
     curl
     wget
+
     unzip
     unrar
     p7zip
+    zip
+
     ddcutil
     wl-clipboard
     wlr-randr
@@ -23,10 +26,10 @@
     gnome-themes-extra
 
     ristretto
-    xarchiver
     mousepad
     vlc
     quodlibet-full
+    file-roller
 
     bibata-cursors
   ];

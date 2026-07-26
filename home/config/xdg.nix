@@ -15,7 +15,7 @@ let
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.gnome.Papers.desktop" ];
     terminal = [ "foot.desktop" ];
-    archive = [ "xarchiver.desktop" ];
+    archive = [ "org.gnome.FileRoller.desktop" ];
     discord = [ "vesktop.desktop" ];
   };
 

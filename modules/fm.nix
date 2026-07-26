@@ -11,6 +11,7 @@
         thunar-media-tags-plugin
       ];
     };
+    xfconf.enable = true;
   };
   services = {
     gvfs.enable = true;
