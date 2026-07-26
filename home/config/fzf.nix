@@ -11,7 +11,9 @@ _: {
     ];
     # FZF_CTRL_R_OPTS
     historyWidget.options = [
-      "--bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'"
+      "--with-nth 1,3.."
+      "--bind 'alt-t:change-with-nth(2..|3..|1,3..)'"
+      "--bind 'ctrl-y:execute-silent(echo -n {3..} | wl-copy)+abort'"
       "--color header:italic"
       "--header 'Press CTRL-Y to copy command into clipboard'"
     ];
