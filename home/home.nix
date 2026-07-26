@@ -54,6 +54,8 @@ in
       imagemagick
       ffmpeg-full
       streamlink
+      yt-dlp
+      glow
 
       # Programming
       gcc
