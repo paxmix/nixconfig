@@ -53,6 +53,7 @@ in
       sqlite
       imagemagick
       ffmpeg-full
+      streamlink
 
       # Programming
       gcc
