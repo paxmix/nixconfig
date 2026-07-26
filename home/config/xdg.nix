@@ -102,6 +102,9 @@ in
     userDirs = {
       enable = true;
       createDirectories = true;
+      extraConfig = {
+        PROJECTS = "${config.home.homeDirectory}/Projects";
+      };
     };
   };
 }
