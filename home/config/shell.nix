@@ -12,5 +12,12 @@ _: {
     interactiveShellInit = ''
       set -g fish_greeting # Clear the welcome message
     '';
+
+    shellInitLast = ''
+      function prompt_newline --on-event fish_postexec
+        echo
+      end
+      alias clear "command clear; commandline -f clear-screen"
+    '';
   };
 }
