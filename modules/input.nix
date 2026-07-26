@@ -62,7 +62,7 @@
               <string>Helvetica</string>
             </test>
             <edit name="family" mode="assign" binding="same">
-              <string>Noto Sans</string>
+              <string>Liberation Sans</string>
             </edit>
           </match>
         </fontconfig>
