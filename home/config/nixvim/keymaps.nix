@@ -76,6 +76,16 @@
         desc = "Flash jump";
       };
     }
+    {
+      mode = [
+        "n"
+        "x"
+        "o"
+      ];
+      key = "S";
+      action = "<cmd>lua require('flash').treesitter()<cr>";
+      options.desc = "Flash Treesitter Select";
+    }
     # Alt + j k to move lines
     {
       mode = "n";
