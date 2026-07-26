@@ -6,7 +6,7 @@ let
     image = [ "org.gnome.Loupe.desktop" ];
     audio = [ "io.bassi.Amberol.desktop" ];
     video = [ "vlc.desktop" ];
-    directory = [ "org.gnome.Nautilus.desktop" ];
+    directory = [ "thunar.desktop" ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.gnome.Papers.desktop" ];
     terminal = [ "foot.desktop" ];
@@ -77,24 +77,31 @@ let
     );
 in
 {
-  xdg.configFile."mimeapps.list".force = true;
-  xdg.mimeApps.enable = true;
-  xdg.mimeApps.associations.added = associations;
-  xdg.mimeApps.defaultApplications = associations;
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
-      xdg-desktop-portal-gtk
-    ];
-    config = {
-      common = {
-        default = [
-          "gnome"
-          "gtk"
-        ];
+  xdg = {
+    configFile."mimeapps.list".force = true;
+    mimeApps = {
+      enable = true;
+      associations.added = associations;
+      defaultApplications = associations;
+    };
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-gtk
+      ];
+      config = {
+        common = {
+          default = [
+            "gnome"
+            "gtk"
+          ];
+        };
       };
+    };
+    userDirs = {
+      enable = true;
+      createDirectories = true;
     };
   };
 }
