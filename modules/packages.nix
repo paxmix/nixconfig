@@ -20,13 +20,13 @@
     papers
     gnome-disk-utility
     baobab
-    loupe
-    gnome-text-editor
     gnome-themes-extra
-    amberol
-    file-roller
 
+    ristretto
+    xarchiver
+    mousepad
     vlc
+    strawberry
 
     bibata-cursors
   ];

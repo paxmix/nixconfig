@@ -7,15 +7,15 @@
 with lib;
 let
   defaultApps = {
-    text = [ "org.gnome.TextEditor.desktop" ];
-    image = [ "org.gnome.Loupe.desktop" ];
-    audio = [ "io.bassi.Amberol.desktop" ];
+    text = [ "org.xfce.mousepad.desktop" ];
+    image = [ "org.xfce.ristretto.desktop" ];
+    audio = [ "org.strawberrymusicplayer.strawberry.desktop" ];
     video = [ "vlc.desktop" ];
     directory = [ "thunar.desktop" ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.gnome.Papers.desktop" ];
     terminal = [ "foot.desktop" ];
-    archive = [ "org.gnome.FileRoller.desktop" ];
+    archive = [ "xarchiver.desktop" ];
     discord = [ "vesktop.desktop" ];
   };
 
