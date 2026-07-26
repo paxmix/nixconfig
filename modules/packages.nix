@@ -26,7 +26,7 @@
     xarchiver
     mousepad
     vlc
-    strawberry
+    quodlibet-full
 
     bibata-cursors
   ];
