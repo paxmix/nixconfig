@@ -51,6 +51,7 @@ in
       tmux
       sqlite
       imagemagick
+      ffmpeg-full
 
       # Programming
       gcc
