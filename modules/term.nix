@@ -4,7 +4,7 @@ _: {
     theme = "tokyonight-night";
     settings = {
       main = {
-        font = "CommitMono Nerd Font:size=12";
+        font = "JetBrainsMonoNL Nerd Font:size=12";
         pad = "8x8 center-when-maximized-and-fullscreen";
       };
       bell = {

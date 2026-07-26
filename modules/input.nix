@@ -13,11 +13,9 @@
 
   fonts = {
     packages = with pkgs; [
-      commit-mono
-      nerd-fonts.commit-mono
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
-      inter
-      merriweather
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -39,16 +37,14 @@
       };
       defaultFonts = {
         monospace = [
-          "CommitMono Nerd Font"
+          "JetBrainsMonoNL Nerd Font"
           "Noto Sans Mono"
         ];
         sansSerif = [
-          "Inter"
           "Noto Sans"
           "Noto Sans Lao"
         ];
         serif = [
-          "Merriweather"
           "Noto Serif"
         ];
         emoji = [
