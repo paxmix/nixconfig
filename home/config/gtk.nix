@@ -3,12 +3,6 @@
   gtk = {
     enable = true;
 
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      size = 24;
-      package = pkgs.bibata-cursors;
-    };
-
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
@@ -39,5 +33,12 @@
     "org/gnome/desktop/default-applications/terminal" = {
       exec = "footclient";
     };
+  };
+
+  home.pointerCursor = {
+    enable = true;
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
   };
 }

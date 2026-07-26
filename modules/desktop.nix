@@ -10,9 +10,9 @@
     enable = true;
     settings = {
       cursor = {
-        theme = "Bibata-Modern-Ice";
+        theme = "Adwaita";
         size = 24;
-        path = "${pkgs.bibata-cursors}/share/icons";
+        package = pkgs.adwaita-icon-theme;
       };
       keyboard = {
         layout = "us";

@@ -30,8 +30,6 @@
     vlc
     quodlibet-full
     file-roller
-
-    bibata-cursors
   ];
 
   programs.localsend = {

@@ -13,10 +13,6 @@
     steam = {
       enable = true;
       gamescopeSession.enable = true;
-
-      extraPackages = with pkgs; [
-        bibata-cursors
-      ];
     };
     gamescope = {
       enable = true;
