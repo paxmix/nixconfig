@@ -8,6 +8,7 @@
         gopls.enable = true;
         golangci_lint_ls.enable = true;
         html.enable = true;
+        markmans.enable = true;
       };
       keymaps = {
         lspBuf = {
@@ -44,6 +45,10 @@
           go = [ "goimports" ];
           nix = [ "nixfmt" ];
           rust = [ "rustfmt" ];
+          markdown = [
+            "prettierd"
+            "prettier"
+          ];
         };
       };
     };
@@ -63,5 +68,7 @@
 
     golangci-lint
     gotools
+
+    prettierd
   ];
 }

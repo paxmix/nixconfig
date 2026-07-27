@@ -27,5 +27,6 @@
     clipboard = "unnamedplus";
     cursorline = true;
     scrolloff = 8;
+    conceallevel = 2;
   };
 }

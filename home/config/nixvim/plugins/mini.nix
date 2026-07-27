@@ -9,6 +9,7 @@ _: {
       pairs = {
         mappings = {
           "'" = false;
+          "`" = false;
         };
       };
       surround = {

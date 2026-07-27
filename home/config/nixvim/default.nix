@@ -12,6 +12,7 @@
       ./plugins/bufferline.nix
       ./plugins/gitsign.nix
       ./plugins/lsp.nix
+      ./plugins/markdown.nix
       ./plugins/mini.nix
       ./plugins/rustaceanvim.nix
       ./plugins/snacks.nix

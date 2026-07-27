@@ -18,6 +18,7 @@ _: {
           "lua"
           "vim"
           "markdown"
+          "markdown_inline"
           "python"
           "nix"
           "rust"
