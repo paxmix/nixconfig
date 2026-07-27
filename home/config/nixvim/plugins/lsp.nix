@@ -8,7 +8,7 @@
         gopls.enable = true;
         golangci_lint_ls.enable = true;
         html.enable = true;
-        markmans.enable = true;
+        marksman.enable = true;
       };
       keymaps = {
         lspBuf = {
