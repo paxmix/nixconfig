@@ -1,5 +1,8 @@
 _: {
-  programs.sesh = {
-    enable = true;
+  programs = {
+    sesh = {
+      enable = true;
+    };
+    fzf.tmux.enableShellIntegration = true;
   };
 }
