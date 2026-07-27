@@ -19,7 +19,6 @@ in
   imports = [
     ./config/eza.nix
     ./config/firefox.nix
-    ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
     ./config/nix-search-tv.nix
@@ -57,7 +56,6 @@ in
       streamlink
       yt-dlp
       go-grip
-      television
 
       # Programming
       gcc
