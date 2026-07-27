@@ -22,6 +22,7 @@ in
     ./config/fzf.nix
     ./config/git.nix
     ./config/gtk.nix
+    ./config/nix-search-tv.nix
     ./config/qt.nix
     ./config/sesh.nix
     ./config/shell.nix
@@ -55,7 +56,8 @@ in
       ffmpeg-full
       streamlink
       yt-dlp
-      glow
+      go-grip
+      television
 
       # Programming
       gcc
