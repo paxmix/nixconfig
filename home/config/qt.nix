@@ -1,10 +1,32 @@
-{ pkgs, ... }: {
+_: {
   qt = {
     enable = true;
-    platformTheme.name = "adwaita";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
+    platformTheme.name = "qtct";
+    style.name = "kvantum";
+    kvantum = {
+      enable = true;
+      settings.General.theme = "KvGnomeDark";
+    };
+
+    qt5ctSettings = {
+      Appearance = {
+        icon_theme = "Papirus-Dark";
+        style = "kvantum";
+      };
+      Fonts = {
+        fixed = "\"JetBrains Mono NL,12\"";
+        general = "\"Noto Sans,12\"";
+      };
+    };
+    qt6ctSettings = {
+      Appearance = {
+        icon_theme = "Papirus-Dark";
+        style = "kvantum";
+      };
+      Fonts = {
+        fixed = "\"JetBrains Mono NL,12\"";
+        general = "\"Noto Sans,12\"";
+      };
     };
   };
 }

@@ -9,7 +9,7 @@ let
   defaultApps = {
     text = [ "org.xfce.mousepad.desktop" ];
     image = [ "org.xfce.ristretto.desktop" ];
-    audio = [ "io.github.quodlibet.QuodLibet.desktop" ];
+    audio = [ "org.strawberrymusicplayer.strawberry.desktop" ];
     video = [ "vlc.desktop" ];
     directory = [ "thunar.desktop" ];
     office = [ "libreoffice.desktop" ];

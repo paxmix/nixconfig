@@ -28,7 +28,7 @@
     ristretto
     mousepad
     vlc
-    quodlibet-full
+    strawberry
     file-roller
   ];
 
