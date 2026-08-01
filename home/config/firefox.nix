@@ -12,7 +12,7 @@
       isDefault = true;
       search = {
         force = true;
-        default = "google";
+        default = "ddg";
         privateDefault = "ddg";
       };
       settings = {
