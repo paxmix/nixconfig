@@ -1,4 +1,4 @@
-theme = "tokyonight_noit"
+theme = "gruvbox-material"
 
 [editor]
 line-number = "relative"

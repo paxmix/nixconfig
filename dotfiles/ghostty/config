@@ -1,4 +1,4 @@
-theme = TokyoNight
+theme = Gruvbox Material Dark
 
 gtk-tabs-location = bottom
 

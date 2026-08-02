@@ -1,27 +1,57 @@
 gui:
-  nerdFontsVersion: "3"
   theme:
     activeBorderColor:
-      - "#ff9e64"
-      - "bold"
+      - "#A9B665" # green
+      - bold
+
     inactiveBorderColor:
-      - "#27a1b9"
+      - "#7C6F64"
+
     searchingActiveBorderColor:
-      - "#ff9e64"
-      - "bold"
+      - "#D8A657" # yellow
+      - bold
+
     optionsTextColor:
-      - "#7aa2f7"
+      - "#89B482" # aqua
+
     selectedLineBgColor:
-      - "#283457"
-    cherryPickedCommitFgColor:
-      - "#7aa2f7"
+      - "#32302F"
+
+    selectedRangeBgColor:
+      - "#3C3836"
+
     cherryPickedCommitBgColor:
-      - "#bb9af7"
-    markedBaseCommitFgColor:
-      - "#7aa2f7"
-    markedBaseCommitBgColor:
-      - "#e0af68"
+      - "#3C3836"
+
+    cherryPickedCommitFgColor:
+      - "#A9B665"
+
     unstagedChangesColor:
-      - "#db4b4b"
+      - "#EA6962" # red
+
     defaultFgColor:
-      - "#c0caf5"
+      - "#D4BE98"
+
+    inactiveViewSelectedLineBgColor:
+      - "#3C3836"
+
+    statusPanelBorderColor:
+      - "#7DAEA3" # blue
+
+    branchColor:
+      - "#7DAEA3"
+
+    diff:
+      addedColor:
+        - "#A9B665"
+      removedColor:
+        - "#EA6962"
+
+    commitHashColor:
+      - "#89B482"
+
+    errorColor:
+      - "#EA6962"
+
+    warningColor:
+      - "#D8A657"

@@ -15,6 +15,7 @@ let
     mango = "mango";
     noctalia = "noctalia";
     tmux = "tmux";
+    yazi = "yazi";
   };
 in
 {
