@@ -57,6 +57,11 @@ in
       streamlink
       yt-dlp
       go-grip
+      ripgrep
+      fd
+      duf
+      dust
+      jq
 
       # Programming
       gcc
