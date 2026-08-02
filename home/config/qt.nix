@@ -15,7 +15,7 @@ _: {
       };
       Fonts = {
         fixed = "\"JetBrains Mono NL,12\"";
-        general = "\"Noto Sans,12\"";
+        general = "\"Inter,12\"";
       };
     };
     qt6ctSettings = {
@@ -25,7 +25,7 @@ _: {
       };
       Fonts = {
         fixed = "\"JetBrains Mono NL,12\"";
-        general = "\"Noto Sans,12\"";
+        general = "\"Inter,12\"";
       };
     };
   };

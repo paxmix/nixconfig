@@ -13,6 +13,7 @@
 
   fonts = {
     packages = with pkgs; [
+      inter
       jetbrains-mono
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
@@ -41,7 +42,7 @@
           "Noto Sans Mono"
         ];
         sansSerif = [
-          "Noto Sans"
+          "Inter"
           "Noto Sans Lao"
         ];
         serif = [
@@ -62,7 +63,7 @@
               <string>Helvetica</string>
             </test>
             <edit name="family" mode="assign" binding="same">
-              <string>Liberation Sans</string>
+              <string>Inter</string>
             </edit>
           </match>
         </fontconfig>
