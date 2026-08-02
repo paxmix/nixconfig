@@ -36,7 +36,7 @@
     };
 
     "org/gnome/desktop/default-applications/terminal" = {
-      exec = "footclient";
+      exec = "foot";
     };
   };
 
