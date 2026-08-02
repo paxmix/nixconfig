@@ -9,6 +9,7 @@ let
   configs = {
     bat = "bat";
     btop = "btop";
+    helix = "helix";
     lazygit = "lazygit";
     mango = "mango";
     noctalia = "noctalia";
@@ -21,6 +22,7 @@ in
     ./config/firefox.nix
     ./config/git.nix
     ./config/gtk.nix
+    ./config/helix.nix
     ./config/nix-search-tv.nix
     ./config/qt.nix
     ./config/sesh.nix
@@ -30,7 +32,6 @@ in
     ./config/xdg.nix
     ./config/yazi.nix
     ./config/zoxide.nix
-    ./config/nixvim
   ];
 
   xdg.configFile = builtins.mapAttrs (name: subpath: {
@@ -62,6 +63,7 @@ in
       go
       gnumake
       cmake
+      odin
 
       cargo
       rustc

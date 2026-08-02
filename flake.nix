@@ -22,8 +22,6 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs =
@@ -51,7 +49,6 @@
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
               users.paxmix.imports = [
-                inputs.nixvim.homeModules.nixvim
                 ./home/home.nix
               ];
               backupFileExtension = "backup";
