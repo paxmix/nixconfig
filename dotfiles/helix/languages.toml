@@ -1,5 +1,15 @@
+[language-server.statix]
+command = "statix"
+args = ["check", "--stdin"]
+[[language]]
+name = "nix"
+auto-format = true
+formatter = { command = "nixfmt" }
+language-servers = [ "nixd", "statix" ]
+
 [[language]]
 name = "go"
+auto-format = true
 formatter = { command = "goimports" }
 
 [[language]]

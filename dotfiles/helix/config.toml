@@ -1,4 +1,4 @@
-theme = "tokyonight"
+theme = "tokyonight_noit"
 
 [editor]
 line-number = "relative"
@@ -14,10 +14,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
-
-# [editor.soft-wrap]
-# enable = true
-# wrap-at-text-width = true
 
 [editor.indent-guides]
 render = true

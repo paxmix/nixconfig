@@ -9,6 +9,7 @@
 
       gopls
       gotools
+      delve
       golangci-lint
       golangci-lint-langserver
 
