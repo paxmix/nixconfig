@@ -9,6 +9,7 @@ let
   configs = {
     bat = "bat";
     btop = "btop";
+    ghostty = "ghostty";
     helix = "helix";
     lazygit = "lazygit";
     mango = "mango";
@@ -20,6 +21,7 @@ in
   imports = [
     ./config/eza.nix
     ./config/firefox.nix
+    ./config/ghostty.nix
     ./config/git.nix
     ./config/gtk.nix
     ./config/helix.nix

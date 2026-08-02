@@ -36,7 +36,7 @@
     };
 
     "org/gnome/desktop/default-applications/terminal" = {
-      exec = "foot";
+      exec = "ghostty";
     };
   };
 
