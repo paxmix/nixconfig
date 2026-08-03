@@ -6,7 +6,7 @@
     fcitx5 = {
       waylandFrontend = true;
       addons = with pkgs; [
-        fcitx5-bamboo
+        qt6Packages.fcitx5-unikey
       ];
     };
   };
