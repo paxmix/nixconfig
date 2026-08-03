@@ -5,7 +5,6 @@
 }:
 {
   imports = [
-    inputs.noctalia.nixosModules.default
     ./hardware-configuration.nix
     ./modules/gaming.nix
     ./modules/nvidia.nix
