@@ -25,6 +25,7 @@ in
     ./config/git.nix
     ./config/gtk.nix
     ./config/helix.nix
+    ./config/joplin.nix
     ./config/nix-search-tv.nix
     ./config/qt.nix
     ./config/sesh.nix
