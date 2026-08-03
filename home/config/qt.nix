@@ -14,7 +14,7 @@ _: {
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"JetBrains Mono NL,12\"";
+        fixed = "\"Meslo LG S,12\"";
         general = "\"Inter,12\"";
       };
     };
@@ -24,7 +24,7 @@ _: {
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"JetBrains Mono NL,12\"";
+        fixed = "\"Meslo LG S,12\"";
         general = "\"Inter,12\"";
       };
     };

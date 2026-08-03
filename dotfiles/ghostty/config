@@ -2,7 +2,7 @@ theme = Gruvbox Material Dark
 
 gtk-tabs-location = bottom
 
-font-family = JetBrains Mono NL
+font-family = MesloLGS Nerd Font
 font-size = 12
 
 window-padding-x = 5
