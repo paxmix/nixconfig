@@ -14,7 +14,7 @@ _: {
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"Meslo LG S,12\"";
+        fixed = "\"CommitMono,13\"";
         general = "\"Inter,12\"";
       };
     };
@@ -24,7 +24,7 @@ _: {
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"Meslo LG S,12\"";
+        fixed = "\"CommitMono,13\"";
         general = "\"Inter,12\"";
       };
     };

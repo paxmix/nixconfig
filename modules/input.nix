@@ -14,8 +14,8 @@
   fonts = {
     packages = with pkgs; [
       inter
-      meslo-lg
-      nerd-fonts.meslo-lg
+      commit-mono
+      nerd-fonts.commit-mono
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -38,7 +38,7 @@
       };
       defaultFonts = {
         monospace = [
-          "Meslo LG S"
+          "CommitMono"
           "Noto Sans Mono"
         ];
         sansSerif = [

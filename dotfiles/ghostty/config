@@ -2,8 +2,8 @@ theme = Gruvbox Material Dark
 
 gtk-tabs-location = bottom
 
-font-family = MesloLGS Nerd Font
-font-size = 12
+font-family = CommitMono
+font-size = 13
 
 window-padding-x = 5
 window-padding-y = 5
