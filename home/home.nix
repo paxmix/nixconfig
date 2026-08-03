@@ -8,7 +8,6 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     bat = "bat";
-    btop = "btop";
     ghostty = "ghostty";
     helix = "helix";
     lazygit = "lazygit";
