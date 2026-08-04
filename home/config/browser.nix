@@ -1,5 +1,6 @@
-{ pkgs, inputs, ... }: {
-  home.packages = [
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
+_: {
+  programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+  };
 }

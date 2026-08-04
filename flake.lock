@@ -58,7 +58,31 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "noctalia-greeter": "noctalia-greeter"
+        "noctalia-greeter": "noctalia-greeter",
+        "zen-browser": "zen-browser"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785829229,
+        "narHash": "sha256-3uc8V4k1+isp3moczS74Dh9Y50x2sBml4jcl0WNNQwI=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "22aba338ba0fe6120b789b8c3f76e132cb9e3377",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "type": "github"
       }
     }
   },

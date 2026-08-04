@@ -46,6 +46,7 @@
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
               users.paxmix.imports = [
+                inputs.zen-browser.homeModules.beta
                 ./home/home.nix
               ];
               backupFileExtension = "backup";
