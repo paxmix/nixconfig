@@ -71,6 +71,7 @@ in
       gnumake
       cmake
       odin
+      steel
 
       cargo
       rustc
