@@ -35,7 +35,7 @@ type = "dark_mode"
 shadow = false
 
 [location]
-address = "Vientiane"
+address = "Vientiane, Laos"
 
 [lockscreen_widgets]
 enabled = true
@@ -133,6 +133,7 @@ widget_order = [
 
 [nightlight]
 enabled = true
+temperature_day = 6000
 temperature_night = 4500
 
 [plugins]
@@ -197,7 +198,7 @@ polkit_agent = true
 enabled = false
 
 [theme]
-builtin = "Gruvbox"
+builtin = "Nord"
 
     [theme.templates]
     builtin_ids = []
@@ -207,13 +208,13 @@ directory = "/home/paxmix/Pictures/Wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/paxmix/Pictures/Wallpapers/mix/among-us.jpg"
+    path = "/home/paxmix/Pictures/Wallpapers/pokemon.png"
 
     [wallpaper.last]
-    path = "/home/paxmix/Pictures/Wallpapers/mix/among-us.jpg"
+    path = "/home/paxmix/Pictures/Wallpapers/pokemon.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/paxmix/Pictures/Wallpapers/mix/among-us.jpg"
+    path = "/home/paxmix/Pictures/Wallpapers/pokemon.png"
 
 [weather]
 refresh_minutes = 240
