@@ -14,8 +14,8 @@
   fonts = {
     packages = with pkgs; [
       inter
-      commit-mono
-      nerd-fonts.commit-mono
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -38,7 +38,7 @@
       };
       defaultFonts = {
         monospace = [
-          "CommitMono"
+          "JetBrains Mono NL"
           "Noto Sans Mono"
         ];
         sansSerif = [

@@ -14,7 +14,7 @@ _: {
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"CommitMono,13\"";
+        fixed = "\"JetBrains Mono NL,12\"";
         general = "\"Inter,12\"";
       };
     };
@@ -24,7 +24,7 @@ _: {
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"CommitMono,13\"";
+        fixed = "\"JetBrains Mono NL,12\"";
         general = "\"Inter,12\"";
       };
     };
