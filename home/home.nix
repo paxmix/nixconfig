@@ -20,7 +20,7 @@ in
 {
   imports = [
     ./config/eza.nix
-    ./config/firefox.nix
+    ./config/browser.nix
     ./config/ghostty.nix
     ./config/git.nix
     ./config/gtk.nix
