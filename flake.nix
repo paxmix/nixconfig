@@ -15,6 +15,8 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -40,6 +42,7 @@
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
               users.paxmix.imports = [
+                inputs.catppuccin.homeModules.catppuccin
                 inputs.zen-browser.homeModules.beta
                 ./home/home.nix
               ];

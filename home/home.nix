@@ -20,6 +20,7 @@ in
   imports = [
     ./config/eza.nix
     ./config/browser.nix
+    ./config/catppuccin.nix
     ./config/ghostty.nix
     ./config/git.nix
     ./config/gtk.nix
