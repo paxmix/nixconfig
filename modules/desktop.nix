@@ -6,17 +6,5 @@
       recommendedServices.enable = true;
     };
   };
-  programs.noctalia-greeter = {
-    enable = true;
-    settings = {
-      cursor = {
-        theme = "Adwaita";
-        size = 24;
-        package = pkgs.adwaita-icon-theme;
-      };
-      keyboard = {
-        layout = "us";
-      };
-    };
-  };
+  services.displayManager.ly.enable = true;
 }

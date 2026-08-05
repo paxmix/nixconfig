@@ -66,7 +66,6 @@
     NIXOS_OZONE_WL = "1";
     # prevent wine from creating file associations
     WINEDLLOVERRIDES = "winemenubuilder.exe=d";
-    STEEL_LSP_HOME = "$HOME/.cache/steel-lsp";
   };
 
   hardware.i2c.enable = true; # For ddcutil
