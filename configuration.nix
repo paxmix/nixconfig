@@ -62,6 +62,7 @@
   environment.sessionVariables = {
     PATH = [
       "$HOME/go/bin"
+      "$HOME/.config/emacs/bin"
     ];
     NIXOS_OZONE_WL = "1";
     # prevent wine from creating file associations

@@ -7,7 +7,7 @@
 (setq doom-font (font-spec :family "JetBrains Mono NL" :size 16)
       doom-variable-pitch-font (font-spec :family "Inter" :size 14))
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'catppuccin)
 
 (after! apheleia
   (setf (alist-get 'go-mode apheleia-mode-alist) 'goimports)
@@ -15,13 +15,16 @@
 
 (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
 
+(after! go-ts-mode
+  (setq go-ts-mode-indent-offset 4))
+
 (setq display-line-numbers-type 'relative)
 (setq confirm-kill-emacs nil)
 (setq scroll-margin 8)
 
 (setq shell-file-name (executable-find "bash"))
-(setq-default ghostel-shell "/bin/fish")
-(setq-default explicit-shell-file-name "/bin/fish")
+(setq-default ghostel-shell (executable-find "fish"))
+(setq-default explicit-shell-file-name (executable-find "fish"))
 
 (setq evil-escape-key-sequence "jk")
 
@@ -29,7 +32,7 @@
       :n "L" #'next-buffer)
 
 (custom-theme-set-faces!
-  'doom-one
+  'catppuccin
   '(org-level-8 :inherit outline-3 :height 1.0)
   '(org-level-7 :inherit outline-3 :height 1.0)
   '(org-level-6 :inherit outline-3 :height 1.1)
