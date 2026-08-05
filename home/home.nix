@@ -7,6 +7,7 @@ let
   dotfile = "${config.home.homeDirectory}/nixconfig/dotfiles";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
+    doom = "doom";
     mango = "mango";
     noctalia = "noctalia";
     tmux = "tmux";
@@ -16,6 +17,7 @@ in
   imports = [
     ./config/browser.nix
     ./config/catppuccin.nix
+    ./config/emacs.nix
     ./config/eza.nix
     ./config/git.nix
     ./config/gtk.nix
