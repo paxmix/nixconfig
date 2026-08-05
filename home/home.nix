@@ -46,7 +46,6 @@ in
       # CLI
       fastfetch
       tealdeer
-      btop
       tmux
       sqlite
       imagemagick
@@ -66,6 +65,7 @@ in
       gnumake
       cmake
       odin
+      zig
 
       cargo
       rustc
@@ -83,5 +83,6 @@ in
 
   programs = {
     bat.enable = true;
+    btop.enable = true;
   };
 }
