@@ -15,4 +15,9 @@ _: {
       git_protocol = "https";
     };
   };
+
+  programs.lazygit = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }

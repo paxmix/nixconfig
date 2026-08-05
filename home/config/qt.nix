@@ -3,10 +3,6 @@ _: {
     enable = true;
     platformTheme.name = "qtct";
     style.name = "kvantum";
-    kvantum = {
-      enable = true;
-      settings.General.theme = "KvGnomeDark";
-    };
 
     qt5ctSettings = {
       Appearance = {

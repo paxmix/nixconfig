@@ -7,25 +7,19 @@ let
   dotfile = "${config.home.homeDirectory}/nixconfig/dotfiles";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    bat = "bat";
-    ghostty = "ghostty";
-    helix = "helix";
     mango = "mango";
     noctalia = "noctalia";
     tmux = "tmux";
-    yazi = "yazi";
   };
 in
 {
   imports = [
-    ./config/eza.nix
     ./config/browser.nix
     ./config/catppuccin.nix
+    ./config/eza.nix
     ./config/ghostty.nix
     ./config/git.nix
     ./config/gtk.nix
-    ./config/helix.nix
-    ./config/joplin.nix
     ./config/nix-search-tv.nix
     ./config/qt.nix
     ./config/sesh.nix
@@ -50,9 +44,7 @@ in
       # CLI
       fastfetch
       tealdeer
-      bat
       btop
-      lazygit
       tmux
       sqlite
       imagemagick
@@ -85,5 +77,9 @@ in
       vesktop
       libreoffice-fresh
     ];
+  };
+
+  programs = {
+    bat.enable = true;
   };
 }
