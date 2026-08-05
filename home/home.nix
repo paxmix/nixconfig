@@ -17,7 +17,6 @@ in
     ./config/browser.nix
     ./config/catppuccin.nix
     ./config/eza.nix
-    ./config/ghostty.nix
     ./config/git.nix
     ./config/gtk.nix
     ./config/nix-search-tv.nix
@@ -25,6 +24,7 @@ in
     ./config/sesh.nix
     ./config/shell.nix
     ./config/starship.nix
+    ./config/term.nix
     ./config/vim.nix
     ./config/xdg.nix
     ./config/yazi.nix

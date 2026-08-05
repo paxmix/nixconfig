@@ -14,7 +14,7 @@ let
     directory = [ "thunar.desktop" ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.gnome.Papers.desktop" ];
-    terminal = [ "com.mitchellh.ghostty.desktop" ];
+    terminal = [ "foot.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
     discord = [ "vesktop.desktop" ];
   };
