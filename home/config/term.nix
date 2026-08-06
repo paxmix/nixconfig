@@ -3,7 +3,7 @@ _: {
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMonoNL Nerd Font:size=12";
+        font = "MesloLGS Nerd Font:size=12";
         pad = "8x8 center-when-maximized-and-fullscreen";
       };
       bell = {
