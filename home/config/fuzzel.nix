@@ -9,7 +9,7 @@
     settings = {
       main = {
         font = "monospace:weight=medium:size=14";
-        prompt = "Run: ";
+        prompt = "'Run: '";
         icon-theme = "Papirus-Dark";
         icons-enabled = "yes";
         terminal = "${pkgs.foot}/bin/foot";
