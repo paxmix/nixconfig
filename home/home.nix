@@ -19,6 +19,7 @@ in
     ./config/catppuccin.nix
     ./config/emacs.nix
     ./config/eza.nix
+    ./config/fuzzel.nix
     ./config/git.nix
     ./config/gtk.nix
     ./config/nix-search-tv.nix
